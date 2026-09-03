@@ -4,31 +4,15 @@ import { useEffect, useMemo, useState } from "react";
 import { BDEV_LEADS, hubspotContactUrl } from "@/lib/seed-data";
 import { formatDate, relativeFromNow } from "@/lib/format";
 import { readBDevStatuses, writeBDevStatus, type BDevStatus } from "@/lib/storage";
+import { STATUS_LABEL, NEXT_STATUS, PREV_STATUS } from "@/lib/bdev";
 import { StatTile } from "./StatTile";
+import { MonthBadge, MonthlyRecap } from "./MonthlyRecap";
 
 const COLUMNS: { key: BDevStatus; title: string; accent: string; dot: string }[] = [
-  { key: "mql", title: "MQL — nouveau", accent: "border-signal-info/40", dot: "bg-signal-info" },
-  { key: "converti", title: "Converti", accent: "border-gold-500/40", dot: "bg-gold-500" },
-  { key: "signe", title: "Signé", accent: "border-signal-success/40", dot: "bg-signal-success" },
+  { key: "mql", title: "MQL — new", accent: "border-signal-info/40", dot: "bg-signal-info" },
+  { key: "converti", title: "Converted", accent: "border-brand-500/40", dot: "bg-brand-500" },
+  { key: "signe", title: "Signed", accent: "border-signal-success/40", dot: "bg-signal-success" },
 ];
-
-const NEXT_STATUS: Record<BDevStatus, BDevStatus | null> = {
-  mql: "converti",
-  converti: "signe",
-  signe: null,
-};
-
-const PREV_STATUS: Record<BDevStatus, BDevStatus | null> = {
-  mql: null,
-  converti: "mql",
-  signe: "converti",
-};
-
-const STATUS_LABEL: Record<BDevStatus, string> = {
-  mql: "MQL",
-  converti: "Converti",
-  signe: "Signé",
-};
 
 export function BDevBoard() {
   const [statuses, setStatuses] = useState<Record<string, BDevStatus>>({});
@@ -75,56 +59,55 @@ export function BDevBoard() {
   const newLast7d = BDEV_LEADS.filter((l) => relativeIsRecent(l.createdate, 7)).length;
 
   return (
-    <div className="space-y-5">
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <StatTile label="Total leads [BDev]" value={BDEV_LEADS.length} accent="info" />
-        <StatTile label="MQL en attente" value={totalCounts.mql} accent="info" />
-        <StatTile label="Convertis" value={totalCounts.converti} accent="gold" />
-        <StatTile label="Signés" value={totalCounts.signe} accent="success" hint={`${newLast7d} nouveaux (7j)`} />
-      </div>
+    <div className="space-y-8">
+      <div className="space-y-5">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <StatTile label="Total leads [BDev]" value={BDEV_LEADS.length} accent="info" />
+          <StatTile label="MQL pending" value={totalCounts.mql} accent="info" />
+          <StatTile label="Converted" value={totalCounts.converti} accent="brand" />
+          <StatTile label="Signed" value={totalCounts.signe} accent="success" hint={`${newLast7d} new (7d)`} />
+        </div>
 
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs text-paper-100/45">
-          Source HubSpot : <code className="rounded bg-ink-800 px-1.5 py-0.5 text-gold-400/90">BDev Ventures by WinDifferent</code>
-          {" — "}considérés comme MQL par défaut. Déplacez une carte pour changer son statut ; le choix est sauvegardé automatiquement dans ce navigateur.
-        </p>
-        <input
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Rechercher un lead…"
-          className="w-full rounded-lg border border-ink-600 bg-ink-800 px-3 py-1.5 text-sm text-paper-50 placeholder:text-paper-100/30 focus:border-gold-500/60 focus:outline-none sm:w-64"
-        />
-      </div>
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs text-paper-100/45">
+            Source: HubSpot contacts from <code className="rounded bg-surface-800 px-1.5 py-0.5 text-brand-400/90">BDev Ventures by WinDifferent</code>
+            {" — "}treated as MQL by default. Move a card to change its status; the choice is saved automatically in this browser.
+          </p>
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search a lead…"
+            className="w-full rounded-lg border border-surface-600 bg-surface-800 px-3 py-1.5 text-sm text-paper-50 placeholder:text-paper-100/30 focus:border-brand-500/60 focus:outline-none sm:w-64"
+          />
+        </div>
 
-      <div className="grid gap-4 lg:grid-cols-3">
-        {COLUMNS.map((col) => (
-          <div key={col.key} className={`rounded-xl border bg-ink-900/60 p-3 ${col.accent}`}>
-            <div className="mb-3 flex items-center justify-between px-1">
-              <div className="flex items-center gap-2">
-                <span className={`h-2 w-2 rounded-full ${col.dot}`} />
-                <h3 className="text-sm font-semibold text-paper-50">{col.title}</h3>
+        <div className="grid gap-4 lg:grid-cols-3">
+          {COLUMNS.map((col) => (
+            <div key={col.key} className={`rounded-xl border bg-surface-900/60 p-3 ${col.accent}`}>
+              <div className="mb-3 flex items-center justify-between px-1">
+                <div className="flex items-center gap-2">
+                  <span className={`h-2 w-2 rounded-full ${col.dot}`} />
+                  <h3 className="text-sm font-semibold text-paper-50">{col.title}</h3>
+                </div>
+                <span className="text-xs text-paper-100/40">{byColumn[col.key].length}</span>
               </div>
-              <span className="text-xs text-paper-100/40">{byColumn[col.key].length}</span>
-            </div>
 
-            <div className="space-y-2.5">
-              {hydrated && byColumn[col.key].length === 0 && (
-                <p className="rounded-lg border border-dashed border-ink-600 px-3 py-6 text-center text-xs text-paper-100/30">
-                  Aucun lead ici
-                </p>
-              )}
-              {byColumn[col.key].map((lead) => (
-                <LeadCard
-                  key={lead.id}
-                  lead={lead}
-                  status={col.key}
-                  onMove={move}
-                />
-              ))}
+              <div className="space-y-2.5">
+                {hydrated && byColumn[col.key].length === 0 && (
+                  <p className="rounded-lg border border-dashed border-surface-600 px-3 py-6 text-center text-xs text-paper-100/30">
+                    No leads here
+                  </p>
+                )}
+                {byColumn[col.key].map((lead) => (
+                  <LeadCard key={lead.id} lead={lead} status={col.key} onMove={move} />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
+
+      <MonthlyRecap leads={BDEV_LEADS} statuses={statuses} />
     </div>
   );
 }
@@ -148,7 +131,7 @@ function LeadCard({
   const domain = lead.email.split("@")[1] ?? "";
 
   return (
-    <div className="rounded-lg border border-ink-600/60 bg-ink-800/80 p-3 shadow-card">
+    <div className="rounded-lg border border-surface-600/60 bg-surface-800/80 p-3 shadow-card">
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">
           <p className="truncate text-sm font-medium text-paper-50">
@@ -156,14 +139,14 @@ function LeadCard({
           </p>
           <a
             href={`mailto:${lead.email}`}
-            className="block truncate text-xs text-paper-100/50 hover:text-gold-400"
+            className="block truncate text-xs text-paper-100/50 hover:text-brand-400"
           >
             {lead.email}
           </a>
         </div>
         <span
-          className="shrink-0 rounded-full bg-ink-700 px-2 py-0.5 text-[10px] font-medium text-paper-100/60"
-          title="Domaine"
+          className="shrink-0 rounded-full bg-surface-700 px-2 py-0.5 text-[10px] font-medium text-paper-100/60"
+          title="Domain"
         >
           {domain}
         </span>
@@ -177,8 +160,14 @@ function LeadCard({
         </p>
       )}
 
+      <div className="mt-2 flex items-center justify-between text-[11px]">
+        <MonthBadge iso={lead.createdate} />
+        <span className="text-paper-100/35" title={formatDate(lead.createdate)}>
+          {relativeFromNow(lead.createdate)}
+        </span>
+      </div>
+
       <div className="mt-2 flex items-center justify-between text-[11px] text-paper-100/35">
-        <span title={formatDate(lead.createdate)}>Entré {relativeFromNow(lead.createdate)}</span>
         <a
           href={hubspotContactUrl(lead.id)}
           target="_blank"
@@ -193,7 +182,7 @@ function LeadCard({
         {prev && (
           <button
             onClick={() => onMove(lead.id, prev)}
-            className="rounded-md border border-ink-600 px-2 py-1 text-[11px] text-paper-100/60 hover:border-ink-500 hover:text-paper-50"
+            className="rounded-md border border-surface-600 px-2 py-1 text-[11px] text-paper-100/60 hover:border-surface-500 hover:text-paper-50"
           >
             ← {STATUS_LABEL[prev]}
           </button>
@@ -201,7 +190,7 @@ function LeadCard({
         {next && (
           <button
             onClick={() => onMove(lead.id, next)}
-            className="flex-1 rounded-md bg-gold-500/15 px-2 py-1 text-[11px] font-medium text-gold-400 hover:bg-gold-500/25"
+            className="flex-1 rounded-md bg-brand-500/15 px-2 py-1 text-[11px] font-medium text-brand-400 hover:bg-brand-500/25"
           >
             → {STATUS_LABEL[next]}
           </button>

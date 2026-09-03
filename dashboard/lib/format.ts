@@ -1,10 +1,10 @@
-const dateFormatter = new Intl.DateTimeFormat("fr-FR", {
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
   day: "2-digit",
   month: "short",
   year: "numeric",
 });
 
-const dateTimeFormatter = new Intl.DateTimeFormat("fr-FR", {
+const dateTimeFormatter = new Intl.DateTimeFormat("en-US", {
   day: "2-digit",
   month: "short",
   year: "numeric",
@@ -25,12 +25,12 @@ export function relativeFromNow(iso: string, now: Date = new Date()): string {
   const diffMs = now.getTime() - then;
   const diffDays = Math.round(diffMs / (1000 * 60 * 60 * 24));
 
-  if (diffDays <= 0) return "aujourd'hui";
-  if (diffDays === 1) return "hier";
-  if (diffDays < 7) return `il y a ${diffDays} j`;
-  if (diffDays < 30) return `il y a ${Math.round(diffDays / 7)} sem.`;
-  if (diffDays < 365) return `il y a ${Math.round(diffDays / 30)} mois`;
-  return `il y a ${Math.round(diffDays / 365)} an(s)`;
+  if (diffDays <= 0) return "today";
+  if (diffDays === 1) return "yesterday";
+  if (diffDays < 7) return `${diffDays}d ago`;
+  if (diffDays < 30) return `${Math.round(diffDays / 7)}w ago`;
+  if (diffDays < 365) return `${Math.round(diffDays / 30)}mo ago`;
+  return `${Math.round(diffDays / 365)}y ago`;
 }
 
 export function isWithinDays(iso: string, days: number, now: Date = new Date()): boolean {

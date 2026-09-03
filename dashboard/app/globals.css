@@ -7,14 +7,15 @@
 }
 
 body {
-  background: #0b0d12;
-  background-image: radial-gradient(circle at 15% 0%, rgba(217, 164, 65, 0.08), transparent 45%),
-    radial-gradient(circle at 85% 10%, rgba(91, 143, 217, 0.06), transparent 40%);
+  background: #0a2621;
+  background-image: radial-gradient(circle at 12% -10%, rgba(52, 211, 153, 0.16), transparent 42%),
+    radial-gradient(circle at 90% 0%, rgba(20, 60, 51, 0.5), transparent 45%),
+    radial-gradient(ellipse at 50% 120%, rgba(4, 18, 15, 0.9), transparent 60%);
   background-attachment: fixed;
 }
 
 ::selection {
-  background: rgba(217, 164, 65, 0.35);
+  background: rgba(52, 211, 153, 0.35);
 }
 
 .scrollbar-thin::-webkit-scrollbar {
@@ -22,7 +23,7 @@ body {
   width: 8px;
 }
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background: #2f3646;
+  background: #1c4c42;
   border-radius: 999px;
 }
 .scrollbar-thin::-webkit-scrollbar-track {
