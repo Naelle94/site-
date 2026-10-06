@@ -12,7 +12,7 @@ export function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
     const subject = encodeURIComponent(
-      `Demande de devis — ${data.get("company") || "nouvelle demande"}`
+      `Demande de devis : ${data.get("company") || "nouvelle demande"}`
     );
     const body = encodeURIComponent(
       `Nom : ${data.get("name")}\nEntreprise : ${data.get("company")}\nPack visé : ${data.get("pack")}\n\nMessage :\n${data.get("message")}`
@@ -34,11 +34,11 @@ export function ContactForm() {
           Votre client mail s'est ouvert
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-muted">
-          Si rien ne s'est passé, écrivez-moi directement à{" "}
+          Si rien ne s'est passé, écrivez-nous directement à{" "}
           <a href="mailto:hello@cortiq.fr" className="text-orange-400 underline underline-offset-2">
             hello@cortiq.fr
           </a>
-          . Je lis tout moi-même.
+          . Nous lisons tout.
         </p>
       </div>
     );
@@ -86,9 +86,9 @@ export function ContactForm() {
           className="border-b border-line bg-transparent py-2.5 text-[15px] text-fg outline-none transition-colors focus:border-orange-500"
         >
           <option className="bg-surface">Je ne sais pas encore, j'ai juste des questions</option>
-          <option className="bg-surface">Test — 10 vidéos</option>
-          <option className="bg-surface">Growth — 20 vidéos</option>
-          <option className="bg-surface">Scale — 50 vidéos</option>
+          <option className="bg-surface">Test · 10 vidéos</option>
+          <option className="bg-surface">Growth · 20 vidéos</option>
+          <option className="bg-surface">Scale · 50 vidéos</option>
         </select>
       </div>
 

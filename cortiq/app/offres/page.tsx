@@ -98,7 +98,7 @@ export default function OffresPage() {
                 ))}
               </ul>
               <p className="mt-6 text-sm leading-relaxed text-muted">
-                Les prix sont en HT (hors taxes — la TVA s'ajoute si vous
+                Les prix sont en HT (hors taxes, la TVA s'ajoute si vous
                 êtes une entreprise). Facturation avant le début de chaque
                 mois.
               </p>

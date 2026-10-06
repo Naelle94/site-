@@ -35,10 +35,10 @@ export const packs = [
 
 export const packIncludes = [
   "On regarde vos publicités actuelles et celles de votre secteur, et on vous propose 3 à 5 idées différentes à tester (on les appelle des « angles » : des façons différentes de présenter la même chose).",
-  "On écrit le texte de chaque vidéo. Vous le lisez et vous dites oui, ou vous demandez des changements — gratuitement, une fois.",
+  "On écrit le texte de chaque vidéo. Vous le lisez et vous dites oui, ou vous demandez des changements, gratuitement, une fois.",
   "On fabrique les vidéos : 2 à 3 visages différents pour ne pas lasser votre audience, au format vertical (comme Instagram ou TikTok) et au format carré.",
   "Si une vidéo ne vous convient pas une fois faite, on la refait une fois gratuitement. Et comme refaire un texte ne coûte rien, on préfère toujours bien valider le texte avant de tourner.",
-  "Livraison 72 heures ouvrées après que vous avez validé le texte — pas après la signature, après la validation du texte.",
+  "Livraison 72 heures ouvrées après la validation du texte, pas après la signature du contrat.",
   "Un espace en ligne où vous suivez tout, avec un vrai suivi si vous connectez vos comptes de pub (Meta, TikTok).",
 ];
 
@@ -57,14 +57,14 @@ export const processSteps = [
     summary: "Rien ne se tourne avant d'avoir une idée qui tient debout.",
     details: [
       "On regarde ce que font vos concurrents, et ce que vous avez déjà essayé.",
-      "On propose 3 à 5 façons différentes de présenter votre produit — pas 30 variantes de la même idée, mais plusieurs idées vraiment différentes.",
+      "On propose 3 à 5 façons différentes de présenter votre produit, pas 30 variantes de la même idée, mais plusieurs idées vraiment différentes.",
       "On s'appuie sur ce que vos clients disent déjà de vous, s'ils ont laissé des avis.",
     ],
   },
   {
     index: "02",
     title: "On écrit le texte",
-    summary: "Une personne — pas une IA — écrit ce qui sera dit dans chaque vidéo.",
+    summary: "Une personne, pas une IA, écrit ce qui sera dit dans chaque vidéo.",
     details: [
       "On pense d'abord aux 3 premières secondes : c'est le moment où les gens décident de rester ou de passer à autre chose.",
       "Vous validez le texte avant qu'on tourne quoi que ce soit.",
@@ -103,7 +103,7 @@ export const goodFit = [
 ];
 
 export const badFit = [
-  "Vous êtes dans la santé réglementée, la crypto, la politique ou l'alcool — la loi est trop stricte pour ce qu'on peut vous proposer aujourd'hui.",
+  "Vous êtes dans la santé réglementée, la crypto, la politique ou l'alcool : la loi est trop stricte pour ce qu'on peut vous proposer aujourd'hui.",
   "Vous voulez une seule vidéo, une fois, sans vouloir tester ni ajuster ensuite.",
 ];
 
@@ -140,7 +140,7 @@ export const faq = [
   {
     question: "Est-ce que c'est légal, une pub faite par IA ?",
     answer:
-      "Oui. Depuis août 2026, la loi européenne demande juste qu'on le dise clairement — ce qu'on fait déjà, sur chaque vidéo.",
+      "Oui. Depuis août 2026, la loi européenne demande juste qu'on le dise clairement, ce qu'on fait déjà sur chaque vidéo.",
   },
   {
     question: "Les visages dans les vidéos, ce sont de vraies personnes ?",
@@ -165,7 +165,7 @@ export const faq = [
   {
     question: "Combien de temps avant ma première vidéo ?",
     answer:
-      "72 heures ouvrées après que vous avez validé le texte — pas après la signature, après la validation du texte.",
+      "72 heures ouvrées après la validation du texte, pas après la signature du contrat.",
   },
 ];
 

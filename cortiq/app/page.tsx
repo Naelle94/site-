@@ -28,13 +28,13 @@ export default function HomePage() {
             </div>
             <h1 className="mt-6 text-balance text-[2.4rem] font-medium leading-[1.1] tracking-tightest text-fg sm:text-5xl md:text-6xl">
               Des vidéos qui donnent envie de cliquer. Vous n'avez pas besoin
-              de comprendre la technique — c'est mon travail.
+              de comprendre la technique, c'est notre travail.
             </h1>
             <p className="mx-auto mt-7 max-w-xl text-balance text-[17px] leading-relaxed text-muted md:text-lg">
-              Je vous fournis des vidéos publicitaires prêtes à poster,
-              écrites par une personne, fabriquées avec de l'intelligence
-              artificielle, livrées en 3 jours. Vous me dites ce que vous
-              vendez, je m'occupe du reste.
+              Nous vous fournissons des vidéos publicitaires prêtes à
+              poster, écrites par une personne, fabriquées avec de
+              l'intelligence artificielle, livrées en 3 jours. Vous nous
+              dites ce que vous vendez, on s'occupe du reste.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button href="/contact">Demander un devis gratuit</Button>
@@ -178,8 +178,8 @@ export default function HomePage() {
               On en parle ?
             </h2>
             <p className="mx-auto mt-6 max-w-lg text-[15px] leading-relaxed text-muted">
-              Dites-moi ce que vous vendez et à qui. Je vous dis honnêtement
-              si je peux vous aider.
+              Dites-nous ce que vous vendez et à qui. Nous vous disons
+              honnêtement si nous pouvons vous aider.
             </p>
             <div className="mt-10 flex justify-center">
               <Button href="/contact">Demander un devis gratuit</Button>

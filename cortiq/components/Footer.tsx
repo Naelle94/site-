@@ -22,17 +22,17 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <Link href="/offres#test" className="text-fg/80 hover:text-orange-400">
-                  Pack Test — 790 €
+                  Pack Test · 790 €
                 </Link>
               </li>
               <li>
                 <Link href="/offres#growth" className="text-fg/80 hover:text-orange-400">
-                  Pack Growth — 1 690 €
+                  Pack Growth · 1 690 €
                 </Link>
               </li>
               <li>
                 <Link href="/offres#scale" className="text-fg/80 hover:text-orange-400">
-                  Pack Scale — 3 490 €
+                  Pack Scale · 3 490 €
                 </Link>
               </li>
             </ul>

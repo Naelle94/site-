@@ -1,5 +1,5 @@
 export function ExampleVideo({
-  caption = "Exemple de format — pas une vidéo client réelle.",
+  caption = "Exemple de format, pas une vidéo client réelle.",
 }: {
   caption?: string;
 }) {

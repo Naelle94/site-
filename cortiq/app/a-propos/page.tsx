@@ -17,15 +17,15 @@ export default function AProposPage() {
         <Container>
           <Eyebrow>Qui est derrière Cortiq</Eyebrow>
           <h1 className="mt-5 max-w-2xl text-balance text-4xl font-medium leading-tight tracking-tight text-fg md:text-6xl">
-            Je fabrique vos vidéos de pub avec de l'intelligence
-            artificielle. Je vous explique tout, sans jargon.
+            Nous fabriquons vos vidéos de pub avec de l'intelligence
+            artificielle. Nous expliquons tout, sans jargon.
           </h1>
           <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-muted md:text-lg">
-            Avant de lancer Cortiq, j'ai vu trop de fondateurs se battre
-            seuls avec leurs publicités, sans jamais comprendre pourquoi ça
-            ne marchait pas. C'est pour ça que j'explique chaque étape, et
-            que je ne vous demande jamais de me faire confiance sur un mot
-            que vous ne comprenez pas.
+            Avant de lancer Cortiq, nous avons vu trop de fondateurs se
+            battre seuls avec leurs publicités, sans jamais comprendre
+            pourquoi ça ne marchait pas. C'est pour ça que nous expliquons
+            chaque étape, et que nous ne vous demandons jamais de nous
+            faire confiance sur un mot que vous ne comprenez pas.
           </p>
         </Container>
       </section>
@@ -47,7 +47,7 @@ export default function AProposPage() {
               Et on vous le dit toujours : sur chaque vidéo, une mention
               indique qu'elle est faite par IA, comme la loi européenne le
               demande depuis août 2026. On préfère vous le dire avant que
-              vous le découvriez après coup — et vos clients aussi méritent
+              vous le découvriez après coup, et vos clients aussi méritent
               de le savoir.
             </p>
           </div>
@@ -75,7 +75,7 @@ export default function AProposPage() {
               On vous dit tout, y compris comment c'est fait.
             </h2>
             <div className="mt-9 flex justify-center">
-              <Button href="/contact">Me parler directement</Button>
+              <Button href="/contact">Nous parler directement</Button>
             </div>
           </div>
         </Container>
