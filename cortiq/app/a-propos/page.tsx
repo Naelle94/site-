@@ -5,9 +5,9 @@ import { TrustGrid } from "@/components/TrustGrid";
 import { Button } from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "À propos",
+  title: "Qui est derrière Cortiq",
   description:
-    "Cortiq produit des vidéos UGC par IA, scriptées par des humains et pilotées par la data — en assumant l'IA plutôt qu'en la cachant.",
+    "Cortiq fabrique vos vidéos de pub avec de l'intelligence artificielle, et explique chaque étape sans jargon.",
 };
 
 export default function AProposPage() {
@@ -15,13 +15,17 @@ export default function AProposPage() {
     <>
       <section className="border-b border-line py-20 md:py-24">
         <Container>
-          <Eyebrow>Qui sommes-nous</Eyebrow>
+          <Eyebrow>Qui est derrière Cortiq</Eyebrow>
           <h1 className="mt-5 max-w-2xl text-balance text-4xl font-medium leading-tight tracking-tight text-fg md:text-6xl">
-            Des créas UGC produites par IA, scriptées par des humains.
+            Je fabrique vos vidéos de pub avec de l'intelligence
+            artificielle. Je vous explique tout, sans jargon.
           </h1>
           <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-muted md:text-lg">
-            Pilotées par la data, livrées sous 72 h — sans jamais prétendre
-            que l'IA n'existe pas.
+            Avant de lancer Cortiq, j'ai vu trop de fondateurs se battre
+            seuls avec leurs publicités, sans jamais comprendre pourquoi ça
+            ne marchait pas. C'est pour ça que j'explique chaque étape, et
+            que je ne vous demande jamais de me faire confiance sur un mot
+            que vous ne comprenez pas.
           </p>
         </Container>
       </section>
@@ -29,25 +33,22 @@ export default function AProposPage() {
       <section className="py-20 md:py-24">
         <Container>
           <div className="mx-auto max-w-3xl space-y-6 text-[15px] leading-relaxed text-fg/80 md:text-[17px]">
+            <Eyebrow>Pourquoi l'IA, expliqué simplement</Eyebrow>
+            <h2 className="pt-2 text-2xl font-medium tracking-tight text-fg">
+              L'intelligence artificielle, ici, ça sert à quoi exactement ?
+            </h2>
             <p>
-              Entre les outils en libre-service que vous devez piloter seul et
-              les agences UGC classiques, trop chères et trop lentes pour
-              tester vite, il manquait un acteur clé en main : stratégie,
-              script et production pilotés, à un prix qui permet de tester
-              plusieurs angles en parallèle plutôt qu'un seul à la fois.
+              Elle sert à fabriquer l'image et la voix de la vidéo, une fois
+              que le texte est écrit par une personne. Elle ne décide de
+              rien toute seule : elle exécute un texte qu'on a validé
+              ensemble.
             </p>
             <p>
-              L'IA n'est pas cachée : c'est elle qui rend ce rythme et ce prix
-              possibles. Nous l'assumons dans notre discours comme dans nos
-              livrables — label et mention IA activés sur chaque diffusion,
-              conformément à l'AI Act. Un prospect qui découvre l'IA après
-              signature se sent trompé ; nous préférons vous le dire avant.
-            </p>
-            <p>
-              Le reste reste humain : une humaine francophone écrit chaque
-              script, avec des références culturelles qui parlent à une
-              audience française — la plupart des outils du marché pensent
-              encore en anglais.
+              Et on vous le dit toujours : sur chaque vidéo, une mention
+              indique qu'elle est faite par IA, comme la loi européenne le
+              demande depuis août 2026. On préfère vous le dire avant que
+              vous le découvriez après coup — et vos clients aussi méritent
+              de le savoir.
             </p>
           </div>
         </Container>
@@ -74,7 +75,7 @@ export default function AProposPage() {
               On vous dit tout, y compris comment c'est fait.
             </h2>
             <div className="mt-9 flex justify-center">
-              <Button href="/contact">Parler à Cortiq</Button>
+              <Button href="/contact">Me parler directement</Button>
             </div>
           </div>
         </Container>

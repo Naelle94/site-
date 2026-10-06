@@ -1,14 +1,14 @@
 const kpis = [
-  { label: "CTR moyen", value: "3,8 %", bars: [40, 65, 55, 80, 70] },
-  { label: "Hook rate", value: "62 %", bars: [55, 60, 58, 72, 68] },
-  { label: "CPA", value: "18,40 €", bars: [90, 75, 60, 50, 45] },
-  { label: "Livraison du mois", value: "12 / 20", bars: [20, 40, 60, 80, 100] },
+  { label: "Qui clique", value: "3,8 sur 100", bars: [40, 65, 55, 80, 70] },
+  { label: "Qui reste après 3 s", value: "62 sur 100", bars: [55, 60, 58, 72, 68] },
+  { label: "Prix par client obtenu", value: "18,40 €", bars: [90, 75, 60, 50, 45] },
+  { label: "Vidéos livrées ce mois", value: "12 / 20", bars: [20, 40, 60, 80, 100] },
 ];
 
 const angles = [
-  { name: "Angle « avant / après »", score: 86 },
-  { name: "Angle « objection prix »", score: 64 },
-  { name: "Angle « témoignage pairs »", score: 48 },
+  { name: "Idée « avant / après »", score: 86 },
+  { name: "Idée « le prix fait peur »", score: 64 },
+  { name: "Idée « d'autres l'ont déjà testé »", score: 48 },
 ];
 
 export function DashboardPreview() {
@@ -51,7 +51,7 @@ export function DashboardPreview() {
 
       <div className="border-t border-line p-5">
         <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
-          CPA par angle
+          Prix par client, pour chaque idée testée
         </div>
         <div className="mt-4 space-y-3">
           {angles.map((angle) => (

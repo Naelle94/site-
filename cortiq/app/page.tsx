@@ -2,17 +2,16 @@ import { Container } from "@/components/Container";
 import { Eyebrow } from "@/components/Eyebrow";
 import { Button } from "@/components/Button";
 import { ProcessStepCard } from "@/components/ProcessStepCard";
-import { DashboardPreview } from "@/components/DashboardPreview";
-import { VideoSlot } from "@/components/VideoSlot";
+import { ExampleVideo } from "@/components/ExampleVideo";
 import { PricingCard } from "@/components/PricingCard";
-import { DifferentiatorGrid } from "@/components/DifferentiatorGrid";
-import { TrustGrid } from "@/components/TrustGrid";
+import { CheckList } from "@/components/CheckList";
+import { FaqAccordion } from "@/components/FaqAccordion";
 import {
   processSteps,
-  dashboardMetrics,
   packs,
-  comparisons,
+  recognitionPoints,
   guarantee,
+  faqShort,
 } from "@/lib/content";
 
 export default function HomePage() {
@@ -25,64 +24,57 @@ export default function HomePage() {
         <Container className="relative pb-20 pt-20 md:pb-28 md:pt-28">
           <div className="mx-auto max-w-3xl text-center">
             <div className="flex justify-center">
-              <Eyebrow>Vidéos UGC pilotées par IA</Eyebrow>
+              <Eyebrow>Vidéos publicitaires, faites pour vendre</Eyebrow>
             </div>
-            <h1 className="mt-6 text-balance text-[2.5rem] font-medium leading-[1.05] tracking-tightest text-fg sm:text-6xl md:text-7xl">
-              Un CPA qui baisse.
-              <br />
-              Pas des <span className="text-orange-500">vidéos</span> qui s'accumulent.
+            <h1 className="mt-6 text-balance text-[2.4rem] font-medium leading-[1.1] tracking-tightest text-fg sm:text-5xl md:text-6xl">
+              Des vidéos qui donnent envie de cliquer. Vous n'avez pas besoin
+              de comprendre la technique — c'est mon travail.
             </h1>
             <p className="mx-auto mt-7 max-w-xl text-balance text-[17px] leading-relaxed text-muted md:text-lg">
-              Des créas UGC produites par IA, scriptées par des humains,
-              pilotées par la data. Stratégie, script et production, livrés
-              sous 72 h.
+              Je vous fournis des vidéos publicitaires prêtes à poster,
+              écrites par une personne, fabriquées avec de l'intelligence
+              artificielle, livrées en 3 jours. Vous me dites ce que vous
+              vendez, je m'occupe du reste.
             </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="/contact">Demander un devis</Button>
+            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Button href="/contact">Demander un devis gratuit</Button>
               <Button href="/offres" variant="secondary">
-                Voir les 3 packs
+                Voir les 3 formules
               </Button>
             </div>
+            <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.1em] text-muted">
+              Réponse sous 48h · Aucun engagement
+            </p>
           </div>
         </Container>
       </section>
 
-      {/* Comparison */}
-      <section className="border-y border-line bg-surface/40">
-        <Container className="grid divide-y divide-line py-0 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-          {comparisons.map((c) => (
-            <div
-              key={c.label}
-              className={`px-6 py-8 text-center sm:px-8 ${
-                c.highlight ? "bg-orange-500/[0.06]" : ""
-              }`}
-            >
-              <div
-                className={`font-mono text-[11px] uppercase tracking-[0.14em] ${
-                  c.highlight ? "text-orange-400" : "text-muted"
-                }`}
-              >
-                {c.label}
-              </div>
-              <p className="mt-3 text-sm leading-relaxed text-fg/75">
-                {c.detail}
-              </p>
-            </div>
-          ))}
+      {/* Recognition */}
+      <section className="border-y border-line bg-surface/40 py-20 md:py-24">
+        <Container>
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-balance text-2xl font-medium tracking-tight text-fg md:text-3xl">
+              Si une de ces phrases vous parle, on devrait discuter
+            </h2>
+          </div>
+          <div className="mx-auto mt-10 max-w-xl">
+            <CheckList items={recognitionPoints} />
+          </div>
         </Container>
       </section>
 
-      {/* Process */}
+      {/* What we do */}
       <section className="py-24 md:py-28">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow>Process</Eyebrow>
+            <Eyebrow>Ce qu'on fait, en clair</Eyebrow>
             <h2 className="mt-5 text-balance text-3xl font-medium tracking-tight text-fg md:text-[2.6rem]">
-              Stratégie, script, livrables
+              Trois choses, dans cet ordre
             </h2>
             <p className="mt-5 text-[15px] leading-relaxed text-muted">
-              Trois étapes, un seul interlocuteur, aucune vidéo tournée avant
-              que le script soit validé.
+              Rien n'est filmé avant que vous ayez validé le texte. Vous ne
+              découvrez jamais une vidéo dont vous n'avez pas déjà approuvé
+              le contenu.
             </p>
           </div>
           <div className="mt-14 grid gap-6 md:grid-cols-3">
@@ -92,73 +84,40 @@ export default function HomePage() {
           </div>
           <div className="mt-10 flex justify-center">
             <Button href="/process" variant="ghost">
-              Voir le process en détail
+              Voir comment ça marche en détail
             </Button>
           </div>
         </Container>
       </section>
 
-      {/* Dashboard */}
+      {/* Example */}
       <section className="border-t border-line bg-surface/40 py-24 md:py-28">
         <Container>
-          <div className="grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-center md:gap-16">
+          <div className="grid items-center gap-12 md:grid-cols-[1fr_auto] md:gap-16">
             <div>
-              <Eyebrow>Dashboard client</Eyebrow>
+              <Eyebrow>Exemple concret</Eyebrow>
               <h2 className="mt-5 text-balance text-3xl font-medium leading-tight tracking-tight text-fg md:text-[2.6rem]">
-                Vous voyez ce qui marche, sans nous demander.
+                À quoi ça ressemble, une vidéo
               </h2>
               <p className="mt-5 max-w-md text-[15px] leading-relaxed text-muted">
-                Connectez Meta ou TikTok et suivez les KPI de votre choix,
-                angle par angle, vidéo par vidéo.
+                Quelqu'un qui parle caméra, un sous-titre qui attrape
+                l'attention dans les 3 premières secondes, un ton naturel.
+                Chaque vidéo est différente selon votre produit et votre
+                cible.
               </p>
-              <ul className="mt-8 space-y-4">
-                {dashboardMetrics.map((m) => (
-                  <li key={m.label} className="flex gap-4">
-                    <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500" />
-                    <div>
-                      <div className="text-sm font-medium text-fg">{m.label}</div>
-                      <div className="text-sm text-muted">{m.description}</div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
             </div>
-            <DashboardPreview />
+            <ExampleVideo />
           </div>
         </Container>
       </section>
 
-      {/* Video slots */}
+      {/* Pricing teaser */}
       <section className="py-24 md:py-28">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow>Vos vidéos</Eyebrow>
+            <Eyebrow>Les 3 formules, en bref</Eyebrow>
             <h2 className="mt-5 text-balance text-3xl font-medium tracking-tight text-fg md:text-[2.6rem]">
-              Ces emplacements vous attendent.
-            </h2>
-            <p className="mt-5 text-[15px] leading-relaxed text-muted">
-              Dès validation des scripts, chaque emplacement se remplit sous
-              72 h — prêt à poster, formats 9:16 et 4:5.
-            </p>
-          </div>
-          <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6">
-            <VideoSlot label="Angle 01 — Hook A" />
-            <VideoSlot label="Angle 01 — Hook B" />
-            <VideoSlot label="Angle 02 — Hook A" />
-            <VideoSlot label="Angle 02 — Hook B" />
-            <VideoSlot label="Angle 03 — Hook A" />
-            <VideoSlot label="Angle 03 — Hook B" />
-          </div>
-        </Container>
-      </section>
-
-      {/* Pricing */}
-      <section className="border-t border-line bg-surface/40 py-24 md:py-28">
-        <Container>
-          <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow>3 packs, sans engagement long</Eyebrow>
-            <h2 className="mt-5 text-balance text-3xl font-medium tracking-tight text-fg md:text-[2.6rem]">
-              Dès 790 € HT / mois
+              Selon combien de vidéos vous voulez tester par mois
             </h2>
           </div>
           <div className="mt-14 grid gap-6 md:grid-cols-3">
@@ -168,38 +127,45 @@ export default function HomePage() {
           </div>
           <div className="mt-10 flex justify-center">
             <Button href="/offres" variant="ghost">
-              Voir le détail des packs
+              Voir le détail des formules
             </Button>
           </div>
         </Container>
       </section>
 
-      {/* Differentiators */}
-      <section className="py-24 md:py-28">
+      {/* Guarantee */}
+      <section className="border-t border-line bg-surface/40 py-24 md:py-28">
         <Container>
-          <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow>Différenciation</Eyebrow>
-            <h2 className="mt-5 text-balance text-3xl font-medium tracking-tight text-fg md:text-[2.6rem]">
-              Le produit, c'est le CPA — pas la vidéo
+          <div className="mx-auto max-w-2xl border border-orange-500/30 bg-orange-500/[0.06] p-8 text-center md:p-10">
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-orange-400">
+              Notre promesse
+            </span>
+            <h2 className="mt-4 text-2xl font-medium tracking-tight text-fg md:text-3xl">
+              {guarantee.title}
             </h2>
-          </div>
-          <div className="mt-14">
-            <DifferentiatorGrid />
+            <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-fg/85">
+              {guarantee.description}
+            </p>
           </div>
         </Container>
       </section>
 
-      {/* Trust */}
-      <section className="border-t border-line bg-surface/40 py-24 md:py-28">
+      {/* FAQ teaser */}
+      <section className="py-24 md:py-28">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow>Transparence</Eyebrow>
+            <Eyebrow>Questions fréquentes</Eyebrow>
             <h2 className="mt-5 text-balance text-3xl font-medium tracking-tight text-fg md:text-[2.6rem]">
-              On vous dit tout, y compris comment c'est fait.
+              Les questions qu'on nous pose tout le temps
             </h2>
           </div>
-          <div className="mx-auto mt-14 max-w-3xl">
-            <TrustGrid />
+          <div className="mx-auto mt-12 max-w-xl">
+            <FaqAccordion items={faqShort} />
+          </div>
+          <div className="mt-8 flex justify-center">
+            <Button href="/offres#faq" variant="ghost">
+              Voir toutes les questions
+            </Button>
           </div>
         </Container>
       </section>
@@ -209,13 +175,14 @@ export default function HomePage() {
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-balance text-3xl font-medium tracking-tight text-fg md:text-5xl">
-              Testez un angle. Mesurez. Décidez.
+              On en parle ?
             </h2>
             <p className="mx-auto mt-6 max-w-lg text-[15px] leading-relaxed text-muted">
-              {guarantee.description}
+              Dites-moi ce que vous vendez et à qui. Je vous dis honnêtement
+              si je peux vous aider.
             </p>
             <div className="mt-10 flex justify-center">
-              <Button href="/contact">Demander un devis</Button>
+              <Button href="/contact">Demander un devis gratuit</Button>
             </div>
           </div>
         </Container>

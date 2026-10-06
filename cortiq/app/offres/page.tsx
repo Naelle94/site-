@@ -3,18 +3,22 @@ import { Container } from "@/components/Container";
 import { Eyebrow } from "@/components/Eyebrow";
 import { PricingCard } from "@/components/PricingCard";
 import { Button } from "@/components/Button";
+import { CheckList } from "@/components/CheckList";
+import { FaqAccordion } from "@/components/FaqAccordion";
 import {
   packs,
   packIncludes,
   packOptions,
   guarantee,
-  excludedSectors,
+  goodFit,
+  badFit,
+  faq,
 } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Offres",
+  title: "Nos formules",
   description:
-    "3 packs mensuels sans engagement long : Test (10 vidéos, 790 €), Growth (20 vidéos, 1 690 €), Scale (50 vidéos, 3 490 €). Stratégie, script, production et dashboard inclus.",
+    "Trois formules mensuelles sans engagement long : Test (10 vidéos, 790 €), Growth (20 vidéos, 1 690 €), Scale (50 vidéos, 3 490 €). Tout est expliqué simplement.",
 };
 
 export default function OffresPage() {
@@ -22,19 +26,40 @@ export default function OffresPage() {
     <>
       <section className="border-b border-line py-20 md:py-24">
         <Container>
-          <Eyebrow>Nos offres</Eyebrow>
+          <Eyebrow>Nos formules</Eyebrow>
           <h1 className="mt-5 max-w-2xl text-balance text-4xl font-medium leading-tight tracking-tight text-fg md:text-6xl">
-            3 packs mensuels, sans engagement long.
+            Trois façons de tester vos pubs, sans vous engager pour un an.
           </h1>
           <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-muted md:text-lg">
-            Entre 70 et 85 € la vidéo — 2 à 4 fois moins cher qu'un créateur
-            UGC humain. Vous changez de pack d'un mois sur l'autre selon votre
-            volume d'angles à tester.
+            Vous changez de formule tous les mois si besoin. On vous facture
+            avant de commencer, et ce que vous recevez est toujours écrit
+            noir sur blanc avant que vous payiez.
           </p>
         </Container>
       </section>
 
       <section className="py-20 md:py-24">
+        <Container>
+          <div className="grid gap-10 md:grid-cols-2">
+            <div>
+              <h2 className="text-lg font-medium text-fg">C'est pour vous si…</h2>
+              <div className="mt-5">
+                <CheckList items={goodFit} />
+              </div>
+            </div>
+            <div>
+              <h2 className="text-lg font-medium text-fg">
+                Ce n'est (probablement) pas pour vous si…
+              </h2>
+              <div className="mt-5">
+                <CheckList items={badFit} variant="cross" />
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-line bg-surface/40 py-20 md:py-24">
         <Container>
           <div className="grid gap-6 md:grid-cols-3">
             {packs.map((pack) => (
@@ -44,11 +69,11 @@ export default function OffresPage() {
         </Container>
       </section>
 
-      <section className="border-t border-line bg-surface/40 py-20 md:py-24">
+      <section className="py-20 md:py-24">
         <Container>
           <div className="grid gap-12 md:grid-cols-2 md:gap-16">
             <div>
-              <Eyebrow>Inclus dans chaque pack</Eyebrow>
+              <Eyebrow>Ce que vous recevez</Eyebrow>
               <ul className="mt-6 space-y-4">
                 {packIncludes.map((item, i) => (
                   <li key={i} className="flex gap-4 text-[15px] leading-relaxed text-fg/80">
@@ -57,11 +82,6 @@ export default function OffresPage() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 text-sm leading-relaxed text-muted">
-                Chaque reprise de script ne coûte rien ; faire valider les
-                scripts avant production protège le prix du pack. Un tour de
-                révision supplémentaire reste possible en option.
-              </p>
             </div>
 
             <div>
@@ -78,47 +98,53 @@ export default function OffresPage() {
                 ))}
               </ul>
               <p className="mt-6 text-sm leading-relaxed text-muted">
-                Prix en HT (facturation B2B). Facturation mensuelle d'avance.
+                Les prix sont en HT (hors taxes — la TVA s'ajoute si vous
+                êtes une entreprise). Facturation avant le début de chaque
+                mois.
               </p>
             </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="py-20 md:py-24">
-        <Container>
-          <div className="border border-orange-500/30 bg-orange-500/[0.06] p-8 md:p-10">
-            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-orange-400">
-              {guarantee.title}
-            </span>
-            <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-fg/85 md:text-lg">
-              {guarantee.description}
-            </p>
           </div>
         </Container>
       </section>
 
       <section className="border-t border-line bg-surface/40 py-20 md:py-24">
         <Container>
-          <div className="grid gap-10 md:grid-cols-[1fr_1fr]">
-            <div>
-              <Eyebrow>Secteurs non accompagnés</Eyebrow>
-              <h2 className="mt-5 text-2xl font-medium tracking-tight text-fg md:text-3xl">
-                Quatre secteurs exclus, sans exception.
-              </h2>
-              <p className="mt-4 text-[15px] leading-relaxed text-muted">
-                Modération publicitaire et risque légal trop élevés pour ces
-                verticales : {excludedSectors.join(", ").toLowerCase()}.
-              </p>
-            </div>
-            <div className="flex flex-col justify-between gap-6 border border-line bg-surface p-8">
-              <p className="text-[15px] leading-relaxed text-fg/80">
-                Un doute sur votre secteur ou votre claim produit ? On le
-                regarde ensemble avant de signer, pas après.
-              </p>
-              <Button href="/contact" variant="secondary" className="self-start">
-                Vérifier mon éligibilité
-              </Button>
+          <div className="mx-auto max-w-2xl border border-orange-500/30 bg-orange-500/[0.06] p-8 text-center md:p-10">
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-orange-400">
+              {guarantee.title}
+            </span>
+            <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-fg/85 md:text-lg">
+              On compare vos vidéos à votre publicité actuelle sur un seul
+              chiffre simple : combien de personnes cliquent. Si aucune de
+              nos vidéos ne fait mieux, vous récupérez la moitié de votre
+              argent. Pas de petites lignes, pas de conditions cachées.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      <section id="faq" className="scroll-mt-20 py-20 md:py-24">
+        <Container>
+          <div className="mx-auto max-w-2xl text-center">
+            <Eyebrow>Questions fréquentes</Eyebrow>
+            <h2 className="mt-5 text-balance text-3xl font-medium tracking-tight text-fg md:text-[2.6rem]">
+              Les questions qu'on nous pose
+            </h2>
+          </div>
+          <div className="mx-auto mt-12 max-w-xl">
+            <FaqAccordion items={faq} />
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-line py-20 md:py-24">
+        <Container>
+          <div className="mx-auto max-w-xl text-center">
+            <h2 className="text-balance text-2xl font-medium tracking-tight text-fg md:text-4xl">
+              Prêt à tester une formule ?
+            </h2>
+            <div className="mt-9 flex justify-center">
+              <Button href="/contact">Demander un devis gratuit</Button>
             </div>
           </div>
         </Container>

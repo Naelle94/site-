@@ -6,7 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Demandez un devis à Cortiq : dites-nous votre produit, votre cible, et le pack qui vous intéresse.",
+    "Dites-moi ce que vous vendez et à qui. Je réponds moi-même sous 48h, sans jargon et sans engagement.",
 };
 
 export default function ContactPage() {
@@ -17,11 +17,11 @@ export default function ContactPage() {
           <div>
             <Eyebrow>Contact</Eyebrow>
             <h1 className="mt-5 text-balance text-4xl font-medium leading-tight tracking-tight text-fg md:text-5xl">
-              Parlons de votre premier angle.
+              Dites-moi ce que vous vendez, et à qui.
             </h1>
             <p className="mt-6 max-w-md text-[15px] leading-relaxed text-muted">
-              Dites-nous où vous en êtes. On revient vers vous sous 48h pour
-              caler le pack adapté ou répondre directement à votre question.
+              Je vous réponds sous 48h, moi-même. Pas de jargon au
+              téléphone, pas de pression pour signer tout de suite.
             </p>
 
             <div className="mt-10 space-y-5 border-t border-line pt-8">
@@ -33,11 +33,11 @@ export default function ContactPage() {
               </div>
               <div className="flex items-center justify-between text-sm">
                 <span className="text-muted">Réponse</span>
-                <span className="font-medium text-fg">Sous 48h</span>
+                <span className="font-medium text-fg">Sous 48h, par moi</span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-muted">Zone</span>
-                <span className="font-medium text-fg">France</span>
+                <span className="text-muted">Engagement</span>
+                <span className="font-medium text-fg">Aucun pour en discuter</span>
               </div>
             </div>
           </div>

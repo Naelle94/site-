@@ -34,11 +34,11 @@ export function ContactForm() {
           Votre client mail s'est ouvert
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-muted">
-          Si rien ne s'est passé, écrivez-nous directement à{" "}
+          Si rien ne s'est passé, écrivez-moi directement à{" "}
           <a href="mailto:hello@cortiq.fr" className="text-orange-400 underline underline-offset-2">
             hello@cortiq.fr
           </a>
-          .
+          . Je lis tout moi-même.
         </p>
       </div>
     );
@@ -49,7 +49,7 @@ export function ContactForm() {
       <div className="grid gap-6 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
           <label htmlFor="name" className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-            Nom
+            Votre prénom
           </label>
           <input
             id="name"
@@ -62,7 +62,7 @@ export function ContactForm() {
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="company" className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-            Marque / entreprise
+            Le nom de votre marque ou entreprise
           </label>
           <input
             id="company"
@@ -77,18 +77,18 @@ export function ContactForm() {
 
       <div className="mt-6 flex flex-col gap-2">
         <label htmlFor="pack" className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-          Pack visé
+          La formule qui vous intéresse
         </label>
         <select
           id="pack"
           name="pack"
-          defaultValue="Test — 10 vidéos"
+          defaultValue="Je ne sais pas encore, j'ai juste des questions"
           className="border-b border-line bg-transparent py-2.5 text-[15px] text-fg outline-none transition-colors focus:border-orange-500"
         >
+          <option className="bg-surface">Je ne sais pas encore, j'ai juste des questions</option>
           <option className="bg-surface">Test — 10 vidéos</option>
           <option className="bg-surface">Growth — 20 vidéos</option>
           <option className="bg-surface">Scale — 50 vidéos</option>
-          <option className="bg-surface">Je ne sais pas encore</option>
         </select>
       </div>
 
@@ -111,7 +111,7 @@ export function ContactForm() {
         disabled={loading}
         className="group mt-8 inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-orange-600 disabled:opacity-60"
       >
-        {loading ? "Ouverture…" : "Envoyer la demande"}
+        {loading ? "Ouverture…" : "Envoyer, sans engagement"}
         {!loading && (
           <span className="transition-transform group-hover:translate-x-0.5">→</span>
         )}

@@ -10,8 +10,8 @@ export function Footer() {
           <div className="max-w-xs">
             <Logo />
             <p className="mt-4 text-sm leading-relaxed text-muted">
-              Des créas UGC produites par IA, scriptées par des humains,
-              pilotées par la data. Livrées sous 72 h.
+              Des vidéos de pub faites avec de l'intelligence artificielle,
+              écrites par une personne, livrées en 72 h.
             </p>
           </div>
 
@@ -85,7 +85,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col gap-4 border-t border-line pt-6 text-xs text-muted md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Cortiq. Tous droits réservés.</p>
-          <p>Vidéos IA conformes à l'AI Act · Mention et label IA sur chaque diffusion</p>
+          <p>On vous dit toujours quand une vidéo est faite par IA, comme la loi le demande</p>
         </div>
       </Container>
     </footer>

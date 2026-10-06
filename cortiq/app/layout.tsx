@@ -6,15 +6,15 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://cortiq.fr"),
   title: {
-    default: "Cortiq — Des UGC IA qui font baisser votre CPA",
+    default: "Cortiq — Des vidéos de pub qui donnent envie de cliquer",
     template: "%s · Cortiq",
   },
   description:
-    "Des créas UGC produites par IA, scriptées par des humains, pilotées par la data. Stratégie, script et production, livrés sous 72 h. 3 packs dès 790 € HT.",
+    "Des vidéos publicitaires prêtes à poster, écrites par une personne, fabriquées avec de l'intelligence artificielle, livrées en 72 h. Trois formules dès 790 € HT, expliquées simplement.",
   openGraph: {
-    title: "Cortiq — Des UGC IA qui font baisser votre CPA",
+    title: "Cortiq — Des vidéos de pub qui donnent envie de cliquer",
     description:
-      "Stratégie, script et production de vidéos UGC, livrées sous 72 h. Dashboard CTR / hook rate / CPA par angle inclus.",
+      "Vous n'avez pas besoin de comprendre la technique : je m'occupe du texte et de la fabrication, livrés en 72 h.",
     url: "https://cortiq.fr",
     siteName: "Cortiq",
     locale: "fr_FR",
