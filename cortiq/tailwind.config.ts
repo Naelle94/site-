@@ -9,10 +9,13 @@ const config: Config = {
     },
     extend: {
       colors: {
-        ink: "#0B0B0C",
-        paper: "#FBFAF8",
-        line: "#E7E3DC",
-        muted: "#6D6B67",
+        void: "#000000",
+        bg: "#07070A",
+        surface: "#111113",
+        surface2: "#19191C",
+        line: "#242327",
+        fg: "#F5F4F1",
+        muted: "#9B9893",
         orange: {
           50: "#FFF3EC",
           100: "#FFE3D2",
@@ -55,21 +58,22 @@ const config: Config = {
         content: "1180px",
       },
       backgroundImage: {
-        grid: "linear-gradient(to right, #ECE8E0 1px, transparent 1px), linear-gradient(to bottom, #ECE8E0 1px, transparent 1px)",
+        grid: "linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)",
+        glow: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255,90,31,0.16), transparent)",
       },
       keyframes: {
         marquee: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
-        fadeUp: {
-          "0%": { opacity: "0", transform: "translateY(14px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
+        pulseSoft: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.4" },
         },
       },
       animation: {
-        marquee: "marquee 32s linear infinite",
-        fadeUp: "fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) both",
+        marquee: "marquee 28s linear infinite",
+        pulseSoft: "pulseSoft 2.4s ease-in-out infinite",
       },
     },
   },

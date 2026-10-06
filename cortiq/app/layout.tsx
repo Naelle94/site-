@@ -4,18 +4,18 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cortiq.vercel.app"),
+  metadataBase: new URL("https://cortiq.fr"),
   title: {
-    default: "Cortiq — Growth partner fractional pour startups",
+    default: "Cortiq — Des UGC IA qui font baisser votre CPA",
     template: "%s · Cortiq",
   },
   description:
-    "Cortiq est un partenaire growth fractional pour startups early-stage. Deux offres, un chiffre garanti : prospection qualifiée et acquisition payante pilotée.",
+    "Des créas UGC produites par IA, scriptées par des humains, pilotées par la data. Stratégie, script et production, livrés sous 72 h. 3 packs dès 790 € HT.",
   openGraph: {
-    title: "Cortiq — Un chiffre garanti. Pas un catalogue de prestations.",
+    title: "Cortiq — Des UGC IA qui font baisser votre CPA",
     description:
-      "Partenaire growth fractional pour startups pré-seed à Series A. Prospection qualifiée, acquisition payante pilotée, audit growth 90 jours.",
-    url: "https://cortiq.vercel.app",
+      "Stratégie, script et production de vidéos UGC, livrées sous 72 h. Dashboard CTR / hook rate / CPA par angle inclus.",
+    url: "https://cortiq.fr",
     siteName: "Cortiq",
     locale: "fr_FR",
     type: "website",

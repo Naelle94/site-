@@ -9,7 +9,7 @@ import { Button } from "./Button";
 
 const links = [
   { href: "/offres", label: "Offres" },
-  { href: "/methode", label: "Méthode" },
+  { href: "/process", label: "Process" },
   { href: "/a-propos", label: "À propos" },
   { href: "/contact", label: "Contact" },
 ];
@@ -23,7 +23,7 @@ export function Header() {
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line/80 bg-paper/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-line/80 bg-bg/80 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between">
         <Logo />
 
@@ -34,8 +34,8 @@ export function Header() {
               href={link.href}
               className={`text-sm transition-colors ${
                 pathname === link.href
-                  ? "text-ink font-medium"
-                  : "text-muted hover:text-ink"
+                  ? "text-fg font-medium"
+                  : "text-muted hover:text-fg"
               }`}
             >
               {link.label}
@@ -45,7 +45,7 @@ export function Header() {
 
         <div className="hidden md:block">
           <Button href="/contact" className="!px-5 !py-2.5 text-[13px]">
-            Réserver l'audit
+            Demander un devis
           </Button>
         </div>
 
@@ -55,12 +55,12 @@ export function Header() {
           className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
         >
           <span
-            className={`h-px w-5 bg-ink transition-transform ${
+            className={`h-px w-5 bg-fg transition-transform ${
               open ? "translate-y-[3.5px] rotate-45" : ""
             }`}
           />
           <span
-            className={`h-px w-5 bg-ink transition-transform ${
+            className={`h-px w-5 bg-fg transition-transform ${
               open ? "-translate-y-[3.5px] -rotate-45" : ""
             }`}
           />
@@ -68,20 +68,20 @@ export function Header() {
       </Container>
 
       {open && (
-        <div className="border-t border-line bg-paper md:hidden">
+        <div className="border-t border-line bg-bg md:hidden">
           <Container className="flex flex-col gap-1 py-4">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="py-2.5 text-[15px] text-ink"
+                className="py-2.5 text-[15px] text-fg"
               >
                 {link.label}
               </Link>
             ))}
             <div className="pt-3">
               <Button href="/contact" className="w-full">
-                Réserver l'audit
+                Demander un devis
               </Button>
             </div>
           </Container>

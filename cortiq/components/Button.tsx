@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 
-type Variant = "primary" | "secondary" | "ghost" | "dark";
+type Variant = "primary" | "secondary" | "ghost" | "onLight";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-orange-500 text-white hover:bg-orange-600 border border-orange-500 hover:border-orange-600",
+    "bg-orange-500 text-white hover:bg-orange-600 border border-orange-500 hover:border-orange-600 shadow-[0_0_24px_rgba(255,90,31,0.35)]",
   secondary:
-    "bg-transparent text-ink border border-ink/15 hover:border-ink/40",
-  ghost: "bg-transparent text-ink hover:text-orange-600",
-  dark: "bg-white text-ink border border-white hover:bg-white/90",
+    "bg-transparent text-fg border border-fg/15 hover:border-fg/40",
+  ghost: "bg-transparent text-fg hover:text-orange-400",
+  onLight: "bg-black text-white border border-black hover:bg-black/80",
 };
 
 export function Button({

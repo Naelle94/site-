@@ -12,10 +12,10 @@ export function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
     const subject = encodeURIComponent(
-      `Audit growth — ${data.get("company") || "nouvelle demande"}`
+      `Demande de devis — ${data.get("company") || "nouvelle demande"}`
     );
     const body = encodeURIComponent(
-      `Nom : ${data.get("name")}\nEntreprise : ${data.get("company")}\nStade : ${data.get("stage")}\n\nMessage :\n${data.get("message")}`
+      `Nom : ${data.get("name")}\nEntreprise : ${data.get("company")}\nPack visé : ${data.get("pack")}\n\nMessage :\n${data.get("message")}`
     );
     window.location.href = `mailto:hello@cortiq.fr?subject=${subject}&body=${body}`;
     setTimeout(() => {
@@ -26,16 +26,16 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="border border-line bg-white p-10 text-center">
-        <span className="font-mono text-xs uppercase tracking-[0.2em] text-orange-500">
+      <div className="border border-line bg-surface p-10 text-center">
+        <span className="font-mono text-xs uppercase tracking-[0.2em] text-orange-400">
           Message prêt
         </span>
-        <h3 className="mt-4 text-xl font-medium text-ink">
+        <h3 className="mt-4 text-xl font-medium text-fg">
           Votre client mail s'est ouvert
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-muted">
           Si rien ne s'est passé, écrivez-nous directement à{" "}
-          <a href="mailto:hello@cortiq.fr" className="text-orange-600 underline underline-offset-2">
+          <a href="mailto:hello@cortiq.fr" className="text-orange-400 underline underline-offset-2">
             hello@cortiq.fr
           </a>
           .
@@ -45,7 +45,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="border border-line bg-white p-8 md:p-10">
+    <form onSubmit={handleSubmit} className="border border-line bg-surface p-8 md:p-10">
       <div className="grid gap-6 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
           <label htmlFor="name" className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
@@ -57,37 +57,38 @@ export function ContactForm() {
             required
             type="text"
             placeholder="Jane Doe"
-            className="border-b border-line bg-transparent py-2.5 text-[15px] text-ink outline-none transition-colors placeholder:text-ink/30 focus:border-orange-500"
+            className="border-b border-line bg-transparent py-2.5 text-[15px] text-fg outline-none transition-colors placeholder:text-fg/25 focus:border-orange-500"
           />
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="company" className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-            Entreprise
+            Marque / entreprise
           </label>
           <input
             id="company"
             name="company"
             required
             type="text"
-            placeholder="Nom de la startup"
-            className="border-b border-line bg-transparent py-2.5 text-[15px] text-ink outline-none transition-colors placeholder:text-ink/30 focus:border-orange-500"
+            placeholder="Nom de la marque"
+            className="border-b border-line bg-transparent py-2.5 text-[15px] text-fg outline-none transition-colors placeholder:text-fg/25 focus:border-orange-500"
           />
         </div>
       </div>
 
       <div className="mt-6 flex flex-col gap-2">
-        <label htmlFor="stage" className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-          Stade
+        <label htmlFor="pack" className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+          Pack visé
         </label>
         <select
-          id="stage"
-          name="stage"
-          defaultValue="Pré-seed"
-          className="border-b border-line bg-transparent py-2.5 text-[15px] text-ink outline-none transition-colors focus:border-orange-500"
+          id="pack"
+          name="pack"
+          defaultValue="Test — 10 vidéos"
+          className="border-b border-line bg-transparent py-2.5 text-[15px] text-fg outline-none transition-colors focus:border-orange-500"
         >
-          <option>Pré-seed</option>
-          <option>Seed</option>
-          <option>Series A</option>
+          <option className="bg-surface">Test — 10 vidéos</option>
+          <option className="bg-surface">Growth — 20 vidéos</option>
+          <option className="bg-surface">Scale — 50 vidéos</option>
+          <option className="bg-surface">Je ne sais pas encore</option>
         </select>
       </div>
 
@@ -100,8 +101,8 @@ export function ContactForm() {
           name="message"
           rows={4}
           required
-          placeholder="Où en êtes-vous sur l'acquisition aujourd'hui ?"
-          className="resize-none border-b border-line bg-transparent py-2.5 text-[15px] text-ink outline-none transition-colors placeholder:text-ink/30 focus:border-orange-500"
+          placeholder="Votre produit, votre cible, et ce qui ne marche pas assez bien aujourd'hui."
+          className="resize-none border-b border-line bg-transparent py-2.5 text-[15px] text-fg outline-none transition-colors placeholder:text-fg/25 focus:border-orange-500"
         />
       </div>
 

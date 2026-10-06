@@ -4,14 +4,14 @@ import { Logo } from "./Logo";
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-paper">
+    <footer className="border-t border-line bg-bg">
       <Container className="py-14">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="max-w-xs">
             <Logo />
             <p className="mt-4 text-sm leading-relaxed text-muted">
-              Partenaire growth fractional pour startups early-stage. Un
-              levier, un chiffre garanti, zéro couche compte-manager.
+              Des créas UGC produites par IA, scriptées par des humains,
+              pilotées par la data. Livrées sous 72 h.
             </p>
           </div>
 
@@ -21,18 +21,18 @@ export function Footer() {
             </div>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
-                <Link href="/offres#prospection-qualifiee" className="text-ink/80 hover:text-orange-600">
-                  Prospection qualifiée
+                <Link href="/offres#test" className="text-fg/80 hover:text-orange-400">
+                  Pack Test — 790 €
                 </Link>
               </li>
               <li>
-                <Link href="/offres#acquisition-payante-pilotee" className="text-ink/80 hover:text-orange-600">
-                  Acquisition payante
+                <Link href="/offres#growth" className="text-fg/80 hover:text-orange-400">
+                  Pack Growth — 1 690 €
                 </Link>
               </li>
               <li>
-                <Link href="/offres#audit" className="text-ink/80 hover:text-orange-600">
-                  Audit growth 90 jours
+                <Link href="/offres#scale" className="text-fg/80 hover:text-orange-400">
+                  Pack Scale — 3 490 €
                 </Link>
               </li>
             </ul>
@@ -44,17 +44,17 @@ export function Footer() {
             </div>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
-                <Link href="/methode" className="text-ink/80 hover:text-orange-600">
-                  Méthode
+                <Link href="/process" className="text-fg/80 hover:text-orange-400">
+                  Process
                 </Link>
               </li>
               <li>
-                <Link href="/a-propos" className="text-ink/80 hover:text-orange-600">
+                <Link href="/a-propos" className="text-fg/80 hover:text-orange-400">
                   À propos
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-ink/80 hover:text-orange-600">
+                <Link href="/contact" className="text-fg/80 hover:text-orange-400">
                   Contact
                 </Link>
               </li>
@@ -67,14 +67,14 @@ export function Footer() {
             </div>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
-                <a href="mailto:hello@cortiq.fr" className="text-ink/80 hover:text-orange-600">
+                <a href="mailto:hello@cortiq.fr" className="text-fg/80 hover:text-orange-400">
                   hello@cortiq.fr
                 </a>
               </li>
               <li>
                 <a
                   href="https://www.linkedin.com"
-                  className="text-ink/80 hover:text-orange-600"
+                  className="text-fg/80 hover:text-orange-400"
                 >
                   LinkedIn
                 </a>
@@ -85,7 +85,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col gap-4 border-t border-line pt-6 text-xs text-muted md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Cortiq. Tous droits réservés.</p>
-          <p>Basé en France · Startups pré-seed à Series A</p>
+          <p>Vidéos IA conformes à l'AI Act · Mention et label IA sur chaque diffusion</p>
         </div>
       </Container>
     </footer>
