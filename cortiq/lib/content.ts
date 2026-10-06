@@ -90,61 +90,6 @@ export const dashboardMetrics = [
   { label: "Où en est chaque vidéo", description: "Texte → fabrication → livrée" },
 ];
 
-export const differentiators = [
-  {
-    index: "01",
-    title: "Des idées, pas juste des fichiers",
-    description:
-      "Un pack, c'est 3 à 5 idées vraiment différentes. Trente variantes de la même idée n'apprennent qu'une chose ; cinq idées différentes en apprennent cinq.",
-  },
-  {
-    index: "02",
-    title: "Un suivi clair, pas un dossier partagé",
-    description:
-      "Vidéos livrées, où elles en sont, combien de clics, combien de clients obtenus — si vous connectez Meta ou TikTok. Vous voyez ce qui marche sans avoir à demander.",
-  },
-  {
-    index: "03",
-    title: "On ne repart jamais de zéro",
-    description:
-      "Chaque mois, les vidéos qui ont le mieux marché nourrissent les textes suivants. C'est pour ça qu'un abonnement a plus de sens qu'un achat ponctuel.",
-  },
-  {
-    index: "04",
-    title: "72 h, pas 2 à 3 semaines",
-    description:
-      "Le délai d'un créateur humain classique sert surtout à trouver quelqu'un de disponible. Nous, non.",
-  },
-  {
-    index: "05",
-    title: "Plusieurs visages",
-    description:
-      "2 à 3 visages différents par pack minimum, pour éviter l'effet « c'est encore la même personne » qui use votre audience.",
-  },
-  {
-    index: "06",
-    title: "Écrit en France, pour la France",
-    description:
-      "Références culturelles locales, écrit par une personne francophone — la plupart des outils du marché pensent en anglais.",
-  },
-];
-
-export const comparisons = [
-  {
-    label: "Un outil en libre-service",
-    detail: "Vous gérez seul le texte, les idées et les essais.",
-  },
-  {
-    label: "Un créateur UGC humain",
-    detail: "2 à 4 fois plus cher, 1 à 3 semaines d'attente.",
-  },
-  {
-    label: "Cortiq",
-    detail: "On s'occupe du texte et de la fabrication, livré en 72 h.",
-    highlight: true,
-  },
-];
-
 export const recognitionPoints = [
   "J'ai essayé de faire des pubs moi-même, et je ne sais pas pourquoi ça ne marche pas.",
   "Je paie un créateur UGC humain, c'est cher et ça prend 2 à 3 semaines par vidéo.",
@@ -190,13 +135,6 @@ export const guarantee = {
   description:
     "Avec la formule Test, si aucune de nos vidéos ne fait mieux cliquer que votre publicité actuelle, on vous rembourse la moitié. On préfère perdre un peu d'argent sur votre premier mois que vous laisser payer pour rien.",
 };
-
-export const excludedSectors = [
-  "Santé réglementée",
-  "Crypto-actifs",
-  "Politique",
-  "Alcool",
-];
 
 export const faq = [
   {
