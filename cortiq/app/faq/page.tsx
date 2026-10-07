@@ -8,7 +8,7 @@ import { faqByTheme, faq } from "@/lib/content";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Toutes les questions sur le crash-test créatif Cortiq : IA et confiance, offres et prix, process et délais, droits et conformité.",
+    "Toutes les questions sur le test créatif Cortiq : IA et confiance, offres et prix, process et délais, droits et conformité.",
 };
 
 const themeSlugs: Record<string, string> = {

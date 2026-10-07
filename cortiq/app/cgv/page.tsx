@@ -19,7 +19,7 @@ export default function CgvPage() {
             Conditions générales de vente
           </h1>
           <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-muted md:text-lg">
-            Applicables à toute commande d'une formule Crash-test, Lab ou À
+            Applicables à toute commande d'une formule Test créatif, Lab ou À
             la demande auprès de Cortiq. En vigueur à la date de votre
             commande.
           </p>

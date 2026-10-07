@@ -6,7 +6,7 @@ import { glossary } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Glossaire",
   description:
-    "Crash-test créatif, hook rate, angle publicitaire, UGC, vidéo pilote, winner : les termes du labo Cortiq, définis simplement.",
+    "Test créatif, hook rate, angle publicitaire, UGC, persona, CPA, ROAS : les termes du labo Cortiq, définis simplement.",
 };
 
 export default function GlossairePage() {

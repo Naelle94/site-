@@ -6,15 +6,15 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://cortiq.fr"),
   title: {
-    default: "Cortiq · Le crash-test créatif de vos pubs",
+    default: "Cortiq · Potentiellement le même résultat, pour moins cher",
     template: "%s · Cortiq",
   },
   description:
-    "Testez 5 angles publicitaires en vidéo IA avant de payer un tournage. Crash-test 890 € HT, Lab 1 690 € HT/mois, à la demande 220 € HT/vidéo. Prix publics, livré en 5 jours.",
+    "Testez 5 angles publicitaires en vidéo IA avant de payer un tournage. Test créatif 890 € HT, Lab 1 690 € HT/mois, à la demande 220 € HT/vidéo. Prix publics, livré en 5 jours.",
   openGraph: {
-    title: "Cortiq · Le crash-test créatif de vos pubs",
+    title: "Cortiq · Potentiellement le même résultat, pour moins cher",
     description:
-      "5 angles testés en vidéo IA en 5 jours. Vous ne dépensez gros que sur ce qui a déjà gagné.",
+      "5 angles testés en vidéo IA en 5 jours, pour moins cher qu'un tournage classique. Ça vaut le coup d'essayer.",
     url: "https://cortiq.fr",
     siteName: "Cortiq",
     locale: "fr_FR",

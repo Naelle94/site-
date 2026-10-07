@@ -72,7 +72,7 @@ export default function BlindTestPage() {
               qu'ils existent.
             </p>
             <div className="mt-9 flex justify-center">
-              <Button href="/contact">Je lance mon crash-test</Button>
+              <Button href="/contact">Je lance mon test créatif</Button>
             </div>
           </div>
         </Container>

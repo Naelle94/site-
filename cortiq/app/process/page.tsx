@@ -3,12 +3,14 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Eyebrow } from "@/components/Eyebrow";
 import { Timeline } from "@/components/Timeline";
+import { PipelineDiagram } from "@/components/PipelineDiagram";
 import { CheckList } from "@/components/CheckList";
 import { Button } from "@/components/Button";
 import {
   processSteps,
   packs,
   complianceChecklist,
+  complianceWhy,
   labLoopPoints,
 } from "@/lib/content";
 
@@ -23,7 +25,7 @@ const howToSchema = {
   "@type": "HowTo",
   name: "Comment tester plusieurs angles publicitaires avant de payer un tournage",
   description:
-    "Le parcours crash-test Cortiq, de l'appel découverte à la lecture des résultats.",
+    "Le parcours du test créatif Cortiq, de l'appel découverte à la mesure des résultats.",
   step: processSteps.map((s) => ({
     "@type": "HowToStep",
     name: `${s.index} · ${s.title}`,
@@ -56,24 +58,46 @@ export default function ProcessPage() {
         </Container>
       </section>
 
-      {/* 2. Timeline */}
+      {/* 2. Vue d'ensemble */}
       <section className="py-20 md:py-24">
         <Container>
-          <Timeline />
+          <div className="mx-auto max-w-2xl text-center">
+            <Eyebrow>Vue d'ensemble</Eyebrow>
+            <h2 className="mt-5 text-balance text-3xl font-medium tracking-tight text-fg md:text-[2.6rem]">
+              De la donnée brute à vos résultats
+            </h2>
+          </div>
+          <div className="mt-12 overflow-x-auto pb-2">
+            <PipelineDiagram />
+          </div>
+        </Container>
+      </section>
+
+      {/* 2.5. Détail des 8 étapes */}
+      <section className="border-t border-line bg-surface py-20 md:py-24">
+        <Container>
+          <div className="mx-auto max-w-2xl text-center">
+            <Eyebrow>Le détail</Eyebrow>
+            <h2 className="mt-5 text-balance text-3xl font-medium tracking-tight text-fg md:text-[2.6rem]">
+              Ce qu'on fait à chaque étape, et pourquoi
+            </h2>
+          </div>
+          <div className="mx-auto mt-14 max-w-2xl">
+            <Timeline />
+          </div>
         </Container>
       </section>
 
       {/* 3. Zoom mention IA et conformité */}
-      <section className="border-t border-line bg-surface py-20 md:py-24">
+      <section className="py-20 md:py-24">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <Eyebrow>Conformité</Eyebrow>
             <h2 className="mt-5 text-balance text-3xl font-medium tracking-tight text-fg md:text-[2.6rem]">
-              La mention IA est activée dès la livraison
+              {complianceWhy.title}
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-muted">
-              Depuis le 2 août 2026, l'AI Act européen impose d'indiquer
-              qu'une publicité vidéo est générée par IA.
+              {complianceWhy.description}
             </p>
             <div className="mx-auto mt-8 max-w-sm text-left">
               <CheckList items={complianceChecklist} />
@@ -91,7 +115,7 @@ export default function ProcessPage() {
       </section>
 
       {/* 4. Résumé de la boucle mensuelle Lab */}
-      <section className="py-20 md:py-24">
+      <section className="border-t border-line bg-surface py-20 md:py-24">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <Eyebrow>La boucle Lab</Eyebrow>
@@ -111,7 +135,7 @@ export default function ProcessPage() {
       </section>
 
       {/* 5. CTA */}
-      <section className="border-t border-line bg-surface py-20 md:py-24">
+      <section className="border-t border-line py-20 md:py-24">
         <Container>
           <div className="mx-auto max-w-xl text-center">
             <h2 className="text-balance text-2xl font-medium tracking-tight text-fg md:text-4xl">

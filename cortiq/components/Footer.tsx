@@ -21,8 +21,8 @@ export function Footer() {
             </div>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
-                <Link href="/offres#crash-test" className="text-fg/80 hover:text-orange-600">
-                  Crash-test · 890 €
+                <Link href="/offres#test-creatif" className="text-fg/80 hover:text-orange-600">
+                  Test créatif · 890 €
                 </Link>
               </li>
               <li>
@@ -46,11 +46,6 @@ export function Footer() {
               <li>
                 <Link href="/app-mobile-b2c" className="text-fg/80 hover:text-orange-600">
                   App mobile B2C
-                </Link>
-              </li>
-              <li>
-                <Link href="/saas-b2b" className="text-fg/80 hover:text-orange-600">
-                  SaaS B2B
                 </Link>
               </li>
               <li>

@@ -2,12 +2,12 @@ import { Container } from "./Container";
 import { Eyebrow } from "./Eyebrow";
 import { Button } from "./Button";
 import { PricingCard } from "./PricingCard";
-import { ComparisonTable } from "./ComparisonTable";
+import { ComparisonCriteria } from "./ComparisonCriteria";
 import { icps, packs, guarantee } from "@/lib/content";
 
 export function IcpLanding({ id }: { id: (typeof icps)[number]["id"] }) {
   const icp = icps.find((i) => i.id === id)!;
-  const crashTest = packs.find((p) => p.id === "crash-test")!;
+  const testCreatif = packs.find((p) => p.id === "test-creatif")!;
 
   return (
     <>
@@ -33,32 +33,68 @@ export function IcpLanding({ id }: { id: (typeof icps)[number]["id"] }) {
               {icp.pitch}
             </h2>
           </div>
+          <div className="mx-auto mt-10 max-w-xl">
+            <Eyebrow>Secteurs concernés</Eyebrow>
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+              {icp.subSegments.map((s) => (
+                <li
+                  key={s}
+                  className="flex gap-3 text-sm leading-relaxed text-fg/80"
+                >
+                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-orange-500" />
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </div>
         </Container>
       </section>
 
       <section className="border-t border-line bg-surface py-20 md:py-24">
         <Container>
-          <div className="mx-auto max-w-md">
-            <PricingCard pack={crashTest} />
+          <div className="mx-auto max-w-2xl text-center">
+            <Eyebrow>Pourquoi Cortiq</Eyebrow>
+            <h2 className="mt-5 text-balance text-3xl font-medium tracking-tight text-fg md:text-[2.6rem]">
+              Pourquoi nous plutôt qu'une autre solution
+            </h2>
           </div>
+          <ul className="mx-auto mt-10 max-w-2xl space-y-4">
+            {icp.whyUs.map((reason) => (
+              <li
+                key={reason}
+                className="flex gap-4 text-[15px] leading-relaxed text-fg/80"
+              >
+                <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-orange-500" />
+                {reason}
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 
       <section className="py-20 md:py-24">
         <Container>
-          <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow>Comparatif</Eyebrow>
-            <h2 className="mt-5 text-balance text-3xl font-medium tracking-tight text-fg md:text-[2.6rem]">
-              Combien coûte une vidéo UGC en France en 2026
-            </h2>
-          </div>
-          <div className="mx-auto mt-12 max-w-2xl">
-            <ComparisonTable />
+          <div className="mx-auto max-w-md">
+            <PricingCard pack={testCreatif} />
           </div>
         </Container>
       </section>
 
       <section className="border-t border-line bg-surface py-20 md:py-24">
+        <Container>
+          <div className="mx-auto max-w-2xl text-center">
+            <Eyebrow>Comparatif</Eyebrow>
+            <h2 className="mt-5 text-balance text-3xl font-medium tracking-tight text-fg md:text-[2.6rem]">
+              Cortiq face à une agence UGC classique
+            </h2>
+          </div>
+          <div className="mx-auto mt-12 max-w-2xl">
+            <ComparisonCriteria />
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-20 md:py-24">
         <Container>
           <div className="mx-auto max-w-2xl border border-orange-500/30 bg-orange-500/[0.05] p-8 text-center md:p-10">
             <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-orange-600">

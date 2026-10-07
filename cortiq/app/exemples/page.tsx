@@ -8,7 +8,7 @@ import { experiencesNote } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Exemples",
   description:
-    "Les fiches d'expérience (EXP-0xx) de Cortiq : angle testé, hook rate, winner ou perdant. Publiées dès les premiers crash-tests clients, perdants assumés compris.",
+    "Les fiches d'expérience (EXP-0xx) de Cortiq : angle testé, hook rate, winner ou perdant. Publiées dès les premiers tests créatifs clients, perdants assumés compris.",
 };
 
 export default function ExemplesPage() {
@@ -22,8 +22,8 @@ export default function ExemplesPage() {
             Une fiche par expérience, perdants compris.
           </h1>
           <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-muted md:text-lg">
-            Chaque crash-test devient une fiche d'expérience (EXP-0xx) :
-            l'angle testé, le hook rate obtenu, et s'il a gagné ou perdu.
+            Chaque test créatif devient une fiche d'expérience (EXP-0xx) :
+            l'angle testé, le hook rate obtenu, et s'il a convaincu ou non.
           </p>
         </Container>
       </section>
@@ -59,7 +59,7 @@ export default function ExemplesPage() {
               Je teste un angle sur ma marque
             </h2>
             <div className="mt-9 flex justify-center">
-              <Button href="/contact">Je lance mon crash-test</Button>
+              <Button href="/contact">Je lance mon test créatif</Button>
             </div>
           </div>
         </Container>

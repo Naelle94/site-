@@ -1,15 +1,17 @@
 # Cortiq
 
-Cortiq teste 5 angles publicitaires en vidéo générée par IA avant qu'une marque ne paie un tournage classique. Prix publics, livré en 5 jours ouvrés.
+Cortiq teste 5 angles publicitaires en vidéo générée par IA avant qu'une marque ne paie un tournage classique. Potentiellement le même résultat qu'une publicité classique, pour moins cher. Prix publics, livré en 5 jours ouvrés.
 
 ## Pages
 
-- [Accueil](https://cortiq.fr/): Le crash-test créatif des publicités. Présentation de l'offre, de la garantie et du Blind Test.
-- [Offres](https://cortiq.fr/offres): Trois formules à prix public : Crash-test (5 vidéos, 890 € HT), Lab (10 vidéos/mois, 1 690 € HT), À la demande (220 € HT/vidéo).
-- [Comment ça marche](https://cortiq.fr/process): Les 9 étapes du parcours crash-test, de l'appel découverte à la lecture des résultats.
-- [Exemples](https://cortiq.fr/exemples): Les fiches d'expérience (EXP-0xx) des crash-tests réalisés, winners et perdants assumés.
+- [Accueil](https://cortiq.fr/): Présentation de l'offre, des références, de la garantie et de la méthode.
+- [Offres](https://cortiq.fr/offres): Trois formules à prix public : Test créatif (5 vidéos, 890 € HT), Lab (10 vidéos/mois, 1 690 € HT), À la demande (220 € HT/vidéo).
+- [Comment ça marche](https://cortiq.fr/process): Les 8 étapes du parcours, de l'appel découverte (facultatif) à la mesure des résultats.
+- [Exemples](https://cortiq.fr/exemples): Les fiches d'expérience (EXP-0xx) des tests créatifs réalisés, gagnants et perdants assumés.
 - [Blind Test](https://cortiq.fr/blind-test): Comparaison à l'aveugle entre une vidéo publicitaire générée par IA et une vidéo tournée par un humain.
 - [FAQ](https://cortiq.fr/faq): Questions sur l'IA et la confiance, les offres et prix, le process et les délais, les droits et la conformité.
-- [Glossaire](https://cortiq.fr/glossaire): Définitions des termes du secteur : crash-test créatif, hook rate, angle publicitaire, UGC, vidéo pilote, winner.
-- [Conditions, en bref](https://cortiq.fr/cgv): Révisions, secteurs refusés, droits sur les vidéos, modalités de paiement.
+- [Glossaire](https://cortiq.fr/glossaire): Définitions des termes du secteur : test créatif, hook rate, angle publicitaire, UGC, persona, CPA, ROAS, AARRR, ICP.
+- [Conditions générales de vente](https://cortiq.fr/cgv): Prix, paiement, délais, révisions, garantie, propriété intellectuelle, conformité, données personnelles, droit applicable.
 - [Contact](https://cortiq.fr/contact): Demande d'appel découverte de 20 minutes.
+- [App mobile B2C](https://cortiq.fr/app-mobile-b2c): Test créatif pensé pour les apps mobiles B2C.
+- [E-commerce](https://cortiq.fr/ecommerce): Test créatif pensé pour l'e-commerce, par sous-secteur.

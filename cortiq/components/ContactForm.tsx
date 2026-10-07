@@ -86,7 +86,7 @@ export function ContactForm() {
           className="border-b border-line bg-transparent py-2.5 text-[15px] text-fg outline-none transition-colors focus:border-orange-500"
         >
           <option className="bg-bg">Je ne sais pas encore, j'ai juste des questions</option>
-          <option className="bg-bg">Crash-test · 890 €</option>
+          <option className="bg-bg">Test créatif · 890 €</option>
           <option className="bg-bg">Lab · 1 690 € / mois</option>
           <option className="bg-bg">À la demande · 220 € / vidéo</option>
         </select>
