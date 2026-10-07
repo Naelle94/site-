@@ -1,17 +1,17 @@
 import Link from "next/link";
 import { Container } from "./Container";
 import { Logo } from "./Logo";
+import { tagline } from "@/lib/content";
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-bg">
+    <footer className="border-t border-line bg-surface">
       <Container className="py-14">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="max-w-xs">
             <Logo />
             <p className="mt-4 text-sm leading-relaxed text-muted">
-              Des vidéos de pub faites avec de l'intelligence artificielle,
-              écrites par une personne, livrées en 72 h.
+              {tagline}
             </p>
           </div>
 
@@ -21,18 +21,18 @@ export function Footer() {
             </div>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
-                <Link href="/offres#test" className="text-fg/80 hover:text-orange-400">
-                  Pack Test · 790 €
+                <Link href="/offres#crash-test" className="text-fg/80 hover:text-orange-600">
+                  Crash-test · 890 €
                 </Link>
               </li>
               <li>
-                <Link href="/offres#growth" className="text-fg/80 hover:text-orange-400">
-                  Pack Growth · 1 690 €
+                <Link href="/offres#lab" className="text-fg/80 hover:text-orange-600">
+                  Lab · 1 690 €
                 </Link>
               </li>
               <li>
-                <Link href="/offres#scale" className="text-fg/80 hover:text-orange-400">
-                  Pack Scale · 3 490 €
+                <Link href="/offres#a-la-demande" className="text-fg/80 hover:text-orange-600">
+                  À la demande · 220 €
                 </Link>
               </li>
             </ul>
@@ -44,18 +44,28 @@ export function Footer() {
             </div>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
-                <Link href="/process" className="text-fg/80 hover:text-orange-400">
-                  Process
+                <Link href="/process" className="text-fg/80 hover:text-orange-600">
+                  Comment ça marche
                 </Link>
               </li>
               <li>
-                <Link href="/a-propos" className="text-fg/80 hover:text-orange-400">
-                  À propos
+                <Link href="/exemples" className="text-fg/80 hover:text-orange-600">
+                  Exemples
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-fg/80 hover:text-orange-400">
-                  Contact
+                <Link href="/blind-test" className="text-fg/80 hover:text-orange-600">
+                  Blind Test
+                </Link>
+              </li>
+              <li>
+                <Link href="/glossaire" className="text-fg/80 hover:text-orange-600">
+                  Glossaire
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="text-fg/80 hover:text-orange-600">
+                  FAQ
                 </Link>
               </li>
             </ul>
@@ -67,17 +77,22 @@ export function Footer() {
             </div>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
-                <a href="mailto:hello@cortiq.fr" className="text-fg/80 hover:text-orange-400">
+                <a href="mailto:hello@cortiq.fr" className="text-fg/80 hover:text-orange-600">
                   hello@cortiq.fr
                 </a>
               </li>
               <li>
                 <a
                   href="https://www.linkedin.com"
-                  className="text-fg/80 hover:text-orange-400"
+                  className="text-fg/80 hover:text-orange-600"
                 >
                   LinkedIn
                 </a>
+              </li>
+              <li>
+                <Link href="/cgv" className="text-fg/80 hover:text-orange-600">
+                  Conditions, en bref
+                </Link>
               </li>
             </ul>
           </div>
@@ -85,7 +100,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col gap-4 border-t border-line pt-6 text-xs text-muted md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Cortiq. Tous droits réservés.</p>
-          <p>On vous dit toujours quand une vidéo est faite par IA, comme la loi le demande</p>
+          <p>Mention IA activée sur chaque vidéo, conforme à l'AI Act européen</p>
         </div>
       </Container>
     </footer>

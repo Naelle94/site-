@@ -85,10 +85,10 @@ export function ContactForm() {
           defaultValue="Je ne sais pas encore, j'ai juste des questions"
           className="border-b border-line bg-transparent py-2.5 text-[15px] text-fg outline-none transition-colors focus:border-orange-500"
         >
-          <option className="bg-surface">Je ne sais pas encore, j'ai juste des questions</option>
-          <option className="bg-surface">Test · 10 vidéos</option>
-          <option className="bg-surface">Growth · 20 vidéos</option>
-          <option className="bg-surface">Scale · 50 vidéos</option>
+          <option className="bg-bg">Je ne sais pas encore, j'ai juste des questions</option>
+          <option className="bg-bg">Crash-test · 890 €</option>
+          <option className="bg-bg">Lab · 1 690 € / mois</option>
+          <option className="bg-bg">À la demande · 220 € / vidéo</option>
         </select>
       </div>
 

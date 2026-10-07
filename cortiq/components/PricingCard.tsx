@@ -7,8 +7,8 @@ export function PricingCard({ pack }: { pack: (typeof packs)[number] }) {
       id={pack.id}
       className={`group relative flex scroll-mt-24 flex-col justify-between overflow-hidden border p-8 transition-colors md:p-9 ${
         pack.highlight
-          ? "border-orange-500/60 bg-gradient-to-b from-orange-500/[0.08] to-transparent"
-          : "border-line bg-surface hover:border-fg/20"
+          ? "border-orange-500/70 bg-gradient-to-b from-orange-500/[0.06] to-transparent"
+          : "border-line bg-bg hover:border-fg/25"
       }`}
     >
       {pack.highlight && (
@@ -34,11 +34,21 @@ export function PricingCard({ pack }: { pack: (typeof packs)[number] }) {
           <span className="text-4xl font-medium tracking-tight text-fg">
             {pack.price.toLocaleString("fr-FR")} €
           </span>
-          <span className="text-sm text-muted">HT / mois</span>
+          <span className="text-sm text-muted">{pack.priceUnit}</span>
         </div>
         <div className="mt-2 font-mono text-xs text-muted">
-          {pack.videos} vidéos · soit {pack.pricePerVideo} € / vidéo
+          {pack.videos} vidéo{pack.videos > 1 ? "s" : ""} · soit {pack.pricePerVideo} € / vidéo ·{" "}
+          {pack.delay}
         </div>
+
+        <ul className="mt-7 space-y-2.5 border-t border-line pt-6">
+          {pack.includes.map((item, i) => (
+            <li key={i} className="flex gap-3 text-sm leading-relaxed text-fg/80">
+              <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-orange-500" />
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
 
       <Link
@@ -49,7 +59,7 @@ export function PricingCard({ pack }: { pack: (typeof packs)[number] }) {
             : "border border-fg/15 text-fg hover:border-fg/40"
         }`}
       >
-        Choisir {pack.name}
+        {pack.cta}
         <span className="transition-transform group-hover:translate-x-1">→</span>
       </Link>
     </div>

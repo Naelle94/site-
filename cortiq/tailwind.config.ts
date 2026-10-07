@@ -9,16 +9,16 @@ const config: Config = {
     },
     extend: {
       colors: {
-        void: "#000000",
-        bg: "#07070A",
-        surface: "#111113",
-        surface2: "#19191C",
-        line: "#242327",
-        fg: "#F5F4F1",
-        muted: "#9B9893",
+        void: "#111111",
+        bg: "#FFFFFF",
+        surface: "#FAFAF8",
+        surface2: "#F3F2EF",
+        line: "#E5E5E5",
+        fg: "#111111",
+        muted: "#6B6B6B",
         orange: {
-          50: "#FFF3EC",
-          100: "#FFE3D2",
+          50: "#FFF4EE",
+          100: "#FFE8DC",
           200: "#FFC6A3",
           300: "#FF9E66",
           400: "#FF7A38",
@@ -58,8 +58,8 @@ const config: Config = {
         content: "1180px",
       },
       backgroundImage: {
-        grid: "linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)",
-        glow: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255,90,31,0.16), transparent)",
+        grid: "linear-gradient(to right, rgba(17,17,17,0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(17,17,17,0.045) 1px, transparent 1px)",
+        glow: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255,90,31,0.10), transparent)",
       },
       keyframes: {
         marquee: {

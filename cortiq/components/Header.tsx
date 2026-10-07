@@ -9,8 +9,9 @@ import { Button } from "./Button";
 
 const links = [
   { href: "/offres", label: "Offres" },
-  { href: "/process", label: "Process" },
-  { href: "/a-propos", label: "À propos" },
+  { href: "/process", label: "Comment ça marche" },
+  { href: "/exemples", label: "Exemples" },
+  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -44,8 +45,8 @@ export function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <Button href="/contact" className="!px-5 !py-2.5 text-[13px]">
-            Demander un devis
+          <Button href="/offres" className="!px-5 !py-2.5 text-[13px]">
+            Je lance mon crash-test
           </Button>
         </div>
 
@@ -80,8 +81,8 @@ export function Header() {
               </Link>
             ))}
             <div className="pt-3">
-              <Button href="/contact" className="w-full">
-                Demander un devis
+              <Button href="/offres" className="w-full">
+                Je lance mon crash-test
               </Button>
             </div>
           </Container>
