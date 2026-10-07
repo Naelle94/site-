@@ -2,7 +2,7 @@ import { processSteps } from "@/lib/content";
 
 export function Timeline() {
   return (
-    <div className="grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-3 lg:grid-cols-9">
+    <div className="grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-4 lg:grid-cols-8">
       {processSteps.map((step, i) => (
         <div key={i} className="flex flex-col gap-2 bg-bg p-5">
           <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-orange-500">

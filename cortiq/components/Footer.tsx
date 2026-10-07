@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="border-t border-line bg-surface">
       <Container className="py-14">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr_1fr_1fr]">
           <div className="max-w-xs">
             <Logo />
             <p className="mt-4 text-sm leading-relaxed text-muted">
@@ -33,6 +33,29 @@ export function Footer() {
               <li>
                 <Link href="/offres#a-la-demande" className="text-fg/80 hover:text-orange-600">
                   À la demande · 220 €
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-muted">
+              Secteurs
+            </div>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              <li>
+                <Link href="/app-mobile-b2c" className="text-fg/80 hover:text-orange-600">
+                  App mobile B2C
+                </Link>
+              </li>
+              <li>
+                <Link href="/saas-b2b" className="text-fg/80 hover:text-orange-600">
+                  SaaS B2B
+                </Link>
+              </li>
+              <li>
+                <Link href="/ecommerce" className="text-fg/80 hover:text-orange-600">
+                  E-commerce
                 </Link>
               </li>
             </ul>
@@ -91,7 +114,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/cgv" className="text-fg/80 hover:text-orange-600">
-                  Conditions, en bref
+                  CGV
                 </Link>
               </li>
             </ul>

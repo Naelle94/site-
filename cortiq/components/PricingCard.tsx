@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { packs } from "@/lib/content";
+import { PackIcon } from "./PackIcon";
 
 export function PricingCard({ pack }: { pack: (typeof packs)[number] }) {
   return (
@@ -18,8 +19,17 @@ export function PricingCard({ pack }: { pack: (typeof packs)[number] }) {
       )}
 
       <div>
+        <span
+          className={`inline-flex h-11 w-11 items-center justify-center rounded-full border ${
+            pack.highlight
+              ? "border-orange-500 bg-orange-500 text-white"
+              : "border-line text-orange-600"
+          }`}
+        >
+          <PackIcon id={pack.id} />
+        </span>
         {!pack.highlight && (
-          <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted">
+          <span className="mt-4 block font-mono text-[10px] uppercase tracking-[0.1em] text-muted">
             {pack.tagline}
           </span>
         )}

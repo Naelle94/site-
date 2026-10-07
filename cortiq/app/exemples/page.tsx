@@ -33,7 +33,7 @@ export default function ExemplesPage() {
         <Container>
           <div className="grid gap-10 md:grid-cols-[auto_1fr] md:items-center md:gap-16">
             <div className="mx-auto w-full max-w-[200px] md:mx-0">
-              <ExampleVideo caption="Exemple de format, pas une fiche d'expérience réelle" />
+              <ExampleVideo caption="Format illustratif, pas une fiche d'expérience réelle" />
             </div>
             <div className="mx-auto max-w-xl border border-line bg-surface p-8 text-center md:mx-0 md:text-left">
               <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-orange-500">

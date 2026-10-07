@@ -5,13 +5,10 @@ import { PricingCard } from "@/components/PricingCard";
 import { Button } from "@/components/Button";
 import { ComparisonTable } from "@/components/ComparisonTable";
 import { DashboardPreview } from "@/components/DashboardPreview";
-import { CheckList } from "@/components/CheckList";
 import {
   packs,
   packOptions,
   guarantee,
-  goodFit,
-  badFit,
 } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -58,29 +55,8 @@ export default function OffresPage() {
         </Container>
       </section>
 
-      <section className="py-20 md:py-24">
-        <Container>
-          <div className="grid gap-10 md:grid-cols-2">
-            <div>
-              <h2 className="text-lg font-medium text-fg">C'est pour vous si…</h2>
-              <div className="mt-5">
-                <CheckList items={goodFit} />
-              </div>
-            </div>
-            <div>
-              <h2 className="text-lg font-medium text-fg">
-                Ce n'est (probablement) pas pour vous si…
-              </h2>
-              <div className="mt-5">
-                <CheckList items={badFit} variant="cross" />
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
       {/* 2. Table des 3 offres + cartes */}
-      <section className="border-t border-line bg-surface py-20 md:py-24">
+      <section className="py-20 md:py-24">
         <Container>
           <div className="grid gap-6 md:grid-cols-3">
             {packs.map((pack) => (

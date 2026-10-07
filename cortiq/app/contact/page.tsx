@@ -47,7 +47,7 @@ export default function ContactPage() {
               Pas de production avant paiement. Paiement d'avance, prix HT.
               Détail des conditions sur la page{" "}
               <Link href="/cgv" className="text-fg underline underline-offset-2 hover:text-orange-600">
-                Conditions, en bref
+                Conditions générales de vente
               </Link>
               .
             </p>

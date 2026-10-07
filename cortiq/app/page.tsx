@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Eyebrow } from "@/components/Eyebrow";
 import { Button } from "@/components/Button";
@@ -8,6 +9,8 @@ import { CheckList } from "@/components/CheckList";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { ComparisonTable } from "@/components/ComparisonTable";
 import { BlindTestTeaser } from "@/components/BlindTestTeaser";
+import { ReferencesBand } from "@/components/ReferencesBand";
+import { FitSection } from "@/components/FitSection";
 import {
   packs,
   conceptSteps,
@@ -16,6 +19,7 @@ import {
   faqShort,
   tagline,
   experiencesNote,
+  icps,
 } from "@/lib/content";
 
 export default function HomePage() {
@@ -88,8 +92,15 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 3. Le problème nommé */}
+      {/* 2.5 Références */}
       <section className="py-20 md:py-24">
+        <Container>
+          <ReferencesBand />
+        </Container>
+      </section>
+
+      {/* 3. Le problème nommé */}
+      <section className="border-t border-line bg-surface py-20 md:py-24">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-balance text-2xl font-medium tracking-tight text-fg md:text-3xl">
@@ -100,6 +111,13 @@ export default function HomePage() {
           <div className="mx-auto mt-10 max-w-xl">
             <CheckList items={recognitionPoints} />
           </div>
+        </Container>
+      </section>
+
+      {/* 3.5 Fait pour vous */}
+      <section className="border-t border-line py-24 md:py-28">
+        <Container>
+          <FitSection />
         </Container>
       </section>
 
@@ -139,6 +157,38 @@ export default function HomePage() {
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {packs.map((pack) => (
               <PricingCard key={pack.id} pack={pack} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* 6.5 Pensé pour votre secteur */}
+      <section className="py-24 md:py-28">
+        <Container>
+          <div className="mx-auto max-w-2xl text-center">
+            <Eyebrow>Par secteur</Eyebrow>
+            <h2 className="mt-5 text-balance text-3xl font-medium tracking-tight text-fg md:text-[2.6rem]">
+              Pensé pour votre secteur
+            </h2>
+          </div>
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {icps.map((icp) => (
+              <Link
+                key={icp.id}
+                href={`/${icp.id}`}
+                className="group border border-line bg-bg p-8 transition-colors hover:border-fg/25"
+              >
+                <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-orange-500">
+                  {icp.label}
+                </span>
+                <p className="mt-4 text-sm leading-relaxed text-fg/80">
+                  {icp.painPoint}
+                </p>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-fg group-hover:text-orange-600">
+                  Voir l'offre
+                  <span className="transition-transform group-hover:translate-x-1">→</span>
+                </span>
+              </Link>
             ))}
           </div>
         </Container>
