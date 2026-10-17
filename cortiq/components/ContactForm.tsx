@@ -26,7 +26,7 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="border border-line bg-surface p-10 text-center">
+      <div className="rounded-2xl border border-line bg-surface p-10 text-center">
         <span className="font-mono text-xs uppercase tracking-[0.2em] text-orange-400">
           Message prêt
         </span>
@@ -45,7 +45,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="border border-line bg-surface p-8 md:p-10">
+    <form onSubmit={handleSubmit} className="rounded-2xl border border-line bg-surface p-8 md:p-10">
       <div className="grid gap-6 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
           <label htmlFor="name" className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">

@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="border-t border-line bg-surface">
       <Container className="py-14">
-        <div className="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 md:grid-cols-[1.1fr_1fr_1fr_1fr_1fr_1fr]">
           <div className="max-w-xs">
             <Logo />
             <p className="mt-4 text-sm leading-relaxed text-muted">
@@ -17,7 +17,45 @@ export function Footer() {
 
           <div>
             <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-muted">
-              Offres
+              Services
+            </div>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              <li>
+                <Link href="/meta-ads" className="text-fg/80 hover:text-orange-600">
+                  Meta Ads
+                </Link>
+              </li>
+              <li>
+                <Link href="/google-ads" className="text-fg/80 hover:text-orange-600">
+                  Google Ads
+                </Link>
+              </li>
+              <li>
+                <Link href="/crm-email" className="text-fg/80 hover:text-orange-600">
+                  CRM / Email
+                </Link>
+              </li>
+              <li>
+                <Link href="/instagram" className="text-fg/80 hover:text-orange-600">
+                  Instagram
+                </Link>
+              </li>
+              <li>
+                <Link href="/seo" className="text-fg/80 hover:text-orange-600">
+                  SEO
+                </Link>
+              </li>
+              <li>
+                <Link href="/tarifs" className="text-fg/80 hover:text-orange-600">
+                  Tous les tarifs
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-muted">
+              Offres vidéo
             </div>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
@@ -43,6 +81,11 @@ export function Footer() {
               Secteurs
             </div>
             <ul className="mt-4 space-y-2.5 text-sm">
+              <li>
+                <Link href="/startups-preseed" className="text-fg/80 hover:text-orange-600">
+                  Startups pre-seed
+                </Link>
+              </li>
               <li>
                 <Link href="/app-mobile-b2c" className="text-fg/80 hover:text-orange-600">
                   App mobile B2C

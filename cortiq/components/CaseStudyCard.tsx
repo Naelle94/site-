@@ -4,7 +4,7 @@ export function CaseStudyCard() {
   return (
     <div className="mx-auto max-w-2xl space-y-8">
       {caseStudies.map((cs) => (
-        <div key={cs.name} className="border border-line bg-bg p-8">
+        <div key={cs.name} className="rounded-2xl border border-line bg-bg p-8">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <h3 className="text-xl font-medium tracking-tight text-fg">
               {cs.name}

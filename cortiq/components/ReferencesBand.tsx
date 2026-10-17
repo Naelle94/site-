@@ -7,7 +7,7 @@ export function ReferencesBand() {
       <p className="mx-auto max-w-xl text-center text-sm leading-relaxed text-muted">
         {founderNote}
       </p>
-      <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden border border-line bg-line md:grid-cols-4">
+      <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-4">
         {references.map((ref) => (
           <div key={ref.name} className="flex flex-col gap-1.5 bg-bg p-5">
             <span className="text-[15px] font-semibold tracking-tight text-fg">

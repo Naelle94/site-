@@ -10,6 +10,7 @@ import { FitSection } from "@/components/FitSection";
 import { WhyChooseUsSection } from "@/components/WhyChooseUsSection";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { PipelineDiagram } from "@/components/PipelineDiagram";
+import { LogoBand } from "@/components/LogoBand";
 import {
   packs,
   faqShort,
@@ -53,7 +54,7 @@ export default function HomePage() {
             {[0, 1, 2, 3, 4].map((i) => (
               <div
                 key={i}
-                className={`aspect-[9/16] overflow-hidden rounded-lg border bg-surface ${
+                className={`aspect-[9/16] overflow-hidden rounded-2xl border bg-surface ${
                   i === 2 ? "border-orange-500" : "border-line"
                 }`}
               >
@@ -101,6 +102,18 @@ export default function HomePage() {
               classique pour tester une idée. Et ça, ça vaut le coup
               d'essayer.
             </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* 2.5 Outils pilotés */}
+      <section className="py-10">
+        <Container>
+          <p className="text-center font-mono text-[11px] uppercase tracking-[0.1em] text-muted">
+            Les outils qu'on pilote pour vous
+          </p>
+          <div className="mt-6">
+            <LogoBand />
           </div>
         </Container>
       </section>
@@ -224,7 +237,7 @@ export default function HomePage() {
               <Link
                 key={icp.id}
                 href={`/${icp.id}`}
-                className="group border border-line bg-bg p-8 transition-colors hover:border-fg/25"
+                className="group rounded-2xl border border-line bg-bg p-8 transition-colors hover:border-fg/25"
               >
                 <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-orange-500">
                   {icp.label}

@@ -1,13 +1,14 @@
+import Link from "next/link";
 import { Container } from "./Container";
 import { Eyebrow } from "./Eyebrow";
 import { Button } from "./Button";
-import { PricingCard } from "./PricingCard";
-import { ComparisonCriteria } from "./ComparisonCriteria";
-import { icps, packs, guarantee } from "@/lib/content";
+import { icps, services } from "@/lib/content";
 
 export function IcpLanding({ id }: { id: (typeof icps)[number]["id"] }) {
   const icp = icps.find((i) => i.id === id)!;
-  const testCreatif = packs.find((p) => p.id === "test-creatif")!;
+  const recommended = services.filter((s) =>
+    (icp.recommendedServices as readonly string[]).includes(s.id)
+  );
 
   return (
     <>
@@ -74,35 +75,37 @@ export function IcpLanding({ id }: { id: (typeof icps)[number]["id"] }) {
 
       <section className="py-20 md:py-24">
         <Container>
-          <div className="mx-auto max-w-md">
-            <PricingCard pack={testCreatif} />
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-t border-line bg-surface py-20 md:py-24">
-        <Container>
           <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow>Comparatif</Eyebrow>
+            <Eyebrow>Recommandé pour vous</Eyebrow>
             <h2 className="mt-5 text-balance text-3xl font-medium tracking-tight text-fg md:text-[2.6rem]">
-              Cortiq face à une agence UGC classique
+              Les services qu'on vous conseille
             </h2>
-          </div>
-          <div className="mx-auto mt-12 max-w-2xl">
-            <ComparisonCriteria />
-          </div>
-        </Container>
-      </section>
-
-      <section className="py-20 md:py-24">
-        <Container>
-          <div className="mx-auto max-w-2xl border border-orange-500/30 bg-orange-500/[0.05] p-8 text-center md:p-10">
-            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-orange-600">
-              {guarantee.title}
-            </span>
-            <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-fg/85">
-              {guarantee.description}
+            <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-muted">
+              {icp.recommendedNote}
             </p>
+          </div>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            {recommended.map((service) => (
+              <Link
+                key={service.id}
+                href={`/${service.slug}`}
+                className="group rounded-2xl border border-line bg-bg p-7 shadow-card transition-colors hover:border-fg/25"
+              >
+                <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-orange-500">
+                  {service.eyebrow}
+                </span>
+                <h3 className="mt-3 text-xl font-medium tracking-tight text-fg">
+                  {service.name}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-fg/80">
+                  {service.promise}
+                </p>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-fg group-hover:text-orange-600">
+                  Voir les tarifs
+                  <span className="transition-transform group-hover:translate-x-1">→</span>
+                </span>
+              </Link>
+            ))}
           </div>
         </Container>
       </section>
@@ -114,7 +117,7 @@ export function IcpLanding({ id }: { id: (typeof icps)[number]["id"] }) {
               Je réserve un appel découverte
             </h2>
             <p className="mx-auto mt-4 max-w-sm text-sm leading-relaxed text-muted">
-              20 minutes, facultatif, pour regarder vos publicités actuelles ensemble.
+              20 minutes, facultatif, pour regarder où vous en êtes aujourd'hui.
             </p>
             <div className="mt-9 flex justify-center">
               <Button href="/contact">Je réserve un appel découverte</Button>

@@ -6,7 +6,7 @@ export function PricingCard({ pack }: { pack: (typeof packs)[number] }) {
   return (
     <div
       id={pack.id}
-      className={`group relative flex scroll-mt-24 flex-col justify-between overflow-hidden border p-8 transition-colors md:p-9 ${
+      className={`group relative flex scroll-mt-24 flex-col justify-between overflow-hidden rounded-2xl border p-8 shadow-card transition-colors md:p-9 ${
         pack.highlight
           ? "border-orange-500/70 bg-gradient-to-b from-orange-500/[0.06] to-transparent"
           : "border-line bg-bg hover:border-fg/25"

@@ -2,7 +2,7 @@ import { comparisonCriteria } from "@/lib/content";
 
 export function ComparisonCriteria() {
   return (
-    <div className="overflow-hidden border border-line">
+    <div className="overflow-hidden rounded-2xl border border-line">
       <div className="hidden bg-void px-5 py-3 font-mono text-[11px] uppercase tracking-[0.08em] text-white md:grid md:grid-cols-[1.1fr_1.2fr_1.2fr]">
         <span>Critère</span>
         <span>Cortiq</span>

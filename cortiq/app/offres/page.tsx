@@ -83,7 +83,7 @@ export default function OffresPage() {
               personnages, voici ce qui s'ajoute, à un prix affiché.
             </p>
           </div>
-          <div className="mx-auto mt-12 max-w-2xl overflow-hidden border border-line">
+          <div className="mx-auto mt-12 max-w-2xl overflow-hidden rounded-2xl border border-line">
             <div className="divide-y divide-line">
               {packOptions.map((option) => (
                 <div

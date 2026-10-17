@@ -11,7 +11,7 @@ export function FitSection() {
           C'est fait pour vous si…
         </h2>
       </div>
-      <div className="mx-auto mt-14 max-w-2xl border border-line bg-bg p-8 md:p-10">
+      <div className="mx-auto mt-14 max-w-2xl rounded-2xl border border-line bg-bg p-8 md:p-10">
         <CheckList items={goodFit} />
       </div>
     </div>

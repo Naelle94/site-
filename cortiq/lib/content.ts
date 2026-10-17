@@ -88,6 +88,328 @@ export const packOptions = [
   { label: "Marque blanche, livré sous votre nom", price: "Sur devis" },
 ] as const;
 
+export const toolLogos = [
+  { id: "meta", name: "Meta" },
+  { id: "google", name: "Google" },
+  { id: "instagram", name: "Instagram" },
+  { id: "shopify", name: "Shopify" },
+  { id: "klaviyo", name: "Klaviyo" },
+] as const;
+
+export const services = [
+  {
+    id: "meta-ads",
+    slug: "meta-ads",
+    name: "Meta Ads",
+    eyebrow: "Acquisition payante",
+    h1: "Des campagnes Meta Ads pilotées pour durer, pas pour un pic d'un mois",
+    promise:
+      "On construit vos campagnes Meta (Facebook et Instagram) avec une logique de test permanent : plusieurs angles créatifs, un retargeting propre, et un remplacement régulier de ce qui ne marche plus.",
+    method: [
+      "Audit du pixel, du CAPI et du catalogue avant tout lancement",
+      "Plusieurs angles créatifs testés en parallèle, jamais un seul pari",
+      "Retargeting dédié dès le premier mois",
+      "Remplacement des créas perdantes à fréquence régulière",
+      "Dashboard de suivi et lecture commentée des résultats",
+    ],
+    packs: [
+      {
+        name: "Lancement",
+        price: 790,
+        priceUnit: "€ HT / mois",
+        audience: "1 produit héros",
+        budget: "Budget média conseillé 600–1 500 €/mois",
+        includes: [
+          "1 campagne + 1 retargeting",
+          "2 angles créatifs",
+          "8 assets IA par mois",
+          "1 batch créa par mois",
+          "Gestion 2×/semaine",
+          "Audit initial inclus le 1er mois",
+          "Dashboard",
+          "Rapport mensuel",
+        ],
+      },
+      {
+        name: "Croissance",
+        price: 1290,
+        priceUnit: "€ HT / mois",
+        audience: "2 produits, ou 1 produit + 1 offre",
+        budget: "Budget média conseillé 1 500–4 000 €/mois",
+        highlight: true,
+        includes: [
+          "2 campagnes + retargeting catalogue",
+          "4 angles créatifs",
+          "16 assets",
+          "Remplacement des créas perdantes toutes les 2 semaines",
+          "Gestion 3×/semaine",
+          "Audit inclus",
+          "Dashboard + lecture mensuelle (3 constats, 3 actions)",
+          "Point mensuel de 30 min",
+        ],
+      },
+      {
+        name: "Scale",
+        price: 1990,
+        priceUnit: "€ HT / mois",
+        audience: "Catalogue complet",
+        budget: "Budget média conseillé 4 000 €+/mois",
+        includes: [
+          "3 campagnes (dont Advantage+ Shopping) + retargeting catalogue",
+          "6 angles créatifs",
+          "24 assets (statiques + 3 vidéos IA)",
+          "Test hebdomadaire",
+          "Pilotage quotidien",
+          "Audit inclus",
+          "Dashboard + lecture toutes les 2 semaines",
+          "Point toutes les 2 semaines",
+        ],
+      },
+    ],
+    setup: {
+      label: "Setup",
+      price: 390,
+      priceUnit: "€ HT",
+      note: "Pixel/CAPI, catalogue, audiences, nomenclature, dashboard. Offert avec un engagement de 3 mois.",
+    },
+    options: [
+      { label: "Audit seul", price: "290 € (déduit si abonnement)" },
+      { label: "Angle supplémentaire (4 assets)", price: "290 €" },
+      { label: "Vidéo IA supplémentaire", price: "90 €" },
+    ],
+    cta: "Je lance mes campagnes Meta Ads",
+  },
+  {
+    id: "google-ads",
+    slug: "google-ads",
+    name: "Google Ads",
+    eyebrow: "Acquisition payante",
+    h1: "Google Shopping et PMax construits sur un flux produit propre",
+    promise:
+      "La plupart des comptes Google Ads sous-performent à cause d'un flux produit mal structuré. On corrige d'abord le flux (Merchant Center, titres, catégories), puis on pilote les campagnes dessus.",
+    method: [
+      "Connexion et nettoyage du Merchant Center (flux, GTIN, catégories)",
+      "Titres produits optimisés pour la recherche",
+      "Conversions GA4 et conversions améliorées branchées dès le départ",
+      "Campagnes construites sur un flux déjà propre, pas en parallèle",
+      "Lecture régulière des résultats, pas uniquement du pilotage automatique",
+    ],
+    packs: [
+      {
+        name: "Shopping",
+        price: 590,
+        priceUnit: "€ HT / mois",
+        audience: "Budget média conseillé 800–2 000 €/mois",
+        includes: [
+          "Merchant Center : flux, GTIN, catégories",
+          "Titres optimisés, conversions GA4 + améliorées",
+          "1 PMax ou Shopping standard + 1 Search marque",
+          "Optimisation du flux au setup",
+          "Dashboard",
+        ],
+      },
+      {
+        name: "Croissance",
+        price: 990,
+        priceUnit: "€ HT / mois",
+        audience: "Budget média conseillé 2 000 €+/mois",
+        highlight: true,
+        includes: [
+          "Flux segmenté par catégorie et par marge",
+          "PMax avec assets (images + 2 vidéos IA) + Shopping segmenté",
+          "Search marque + Search génériques",
+          "Optimisation du flux mensuelle",
+          "Dashboard + lecture mensuelle",
+        ],
+      },
+    ],
+    setup: {
+      label: "Setup Google",
+      price: 490,
+      priceUnit: "€ HT",
+      note: "Combo Meta Croissance + Google Shopping : 1 690 € HT/mois au lieu de 1 880 €.",
+    },
+    options: [],
+    cta: "Je lance mes campagnes Google Ads",
+  },
+  {
+    id: "crm-email",
+    slug: "crm-email",
+    name: "CRM / Email",
+    eyebrow: "Rétention & fidélisation",
+    h1: "Des flows email qui travaillent chaque jour, pas juste une newsletter",
+    promise:
+      "On commence par l'essentiel (délivrabilité, flows automatiques) avant de parler de newsletters. Un abandon de panier mal réglé coûte plus cher qu'une mauvaise campagne.",
+    method: [
+      "Audit du domaine et de la délivrabilité avant tout envoi",
+      "Connexion Shopify et pop-up de capture d'emails",
+      "Flows automatiques prioritaires : bienvenue, panier, post-achat",
+      "Segmentation prospects / clients / VIP",
+      "Nettoyage régulier des inactifs pour protéger la délivrabilité",
+    ],
+    packs: [
+      {
+        name: "Kickstart",
+        price: 790,
+        priceUnit: "€ HT",
+        audience: "Mise en place, paiement unique",
+        includes: [
+          "Audit domaine et délivrabilité",
+          "Connexion Shopify",
+          "Pop-up de capture",
+          "Template maître",
+          "3 flows : bienvenue, panier, post-achat",
+        ],
+      },
+      {
+        name: "Complet",
+        price: 1290,
+        priceUnit: "€ HT",
+        audience: "Mise en place, paiement unique",
+        highlight: true,
+        includes: [
+          "Tout Kickstart",
+          "Abandon de navigation",
+          "Win-back",
+          "Nettoyage des inactifs",
+          "Segmentation prospects, clients, VIP",
+        ],
+      },
+      {
+        name: "Essentiel",
+        price: 390,
+        priceUnit: "€ HT / mois",
+        audience: "Suivi mensuel",
+        includes: ["2 newsletters par mois", "Rapport mensuel"],
+      },
+      {
+        name: "Croissance",
+        price: 890,
+        priceUnit: "€ HT / mois",
+        audience: "Suivi mensuel",
+        includes: [
+          "4 newsletters par mois",
+          "Maintenance des 6 flows",
+          "1 A/B test d'objet par mois",
+          "Segmentation",
+          "Rapport",
+        ],
+      },
+    ],
+    setup: null,
+    options: [],
+    cta: "Je mets en place mon CRM / Email",
+  },
+  {
+    id: "instagram",
+    slug: "instagram",
+    name: "Instagram",
+    eyebrow: "Présence organique",
+    h1: "Un Instagram tenu à jour, sans que ça dépende de votre planning",
+    promise:
+      "Du contenu régulier, pensé pour votre marque, avec un calendrier clair. Vous gardez la main sur la publication, ou on s'en occupe entièrement selon le pack choisi.",
+    method: [
+      "Audit de départ pour fixer une ligne édito cohérente",
+      "Visuels et carrousels produits chaque mois, pas à la dernière minute",
+      "Calendrier de publication partagé",
+      "Stories en complément des posts dans les packs supérieurs",
+      "Modération et réponses aux messages dans le pack Géré",
+    ],
+    packs: [
+      {
+        name: "Contenu",
+        price: 390,
+        priceUnit: "€ HT / mois",
+        audience: "Vous publiez vous-même",
+        includes: [
+          "8 posts par mois (6 visuels IA + 2 carrousels)",
+          "Légendes",
+          "Calendrier de publication",
+        ],
+      },
+      {
+        name: "Contenu+",
+        price: 790,
+        priceUnit: "€ HT / mois",
+        audience: "Programmation incluse",
+        highlight: true,
+        includes: [
+          "Audit de départ",
+          "12 posts par mois",
+          "6 stories par mois",
+          "Programmation incluse",
+        ],
+      },
+      {
+        name: "Géré",
+        price: 1190,
+        priceUnit: "€ HT / mois",
+        audience: "On s'occupe de tout",
+        includes: [
+          "Tout Contenu+",
+          "Modération et réponses aux messages (20 min par jour ouvré)",
+          "Rapport",
+        ],
+      },
+    ],
+    setup: null,
+    options: [],
+    cta: "Je lance mon Instagram",
+  },
+  {
+    id: "seo",
+    slug: "seo",
+    name: "SEO",
+    eyebrow: "Acquisition organique",
+    h1: "Un SEO Shopify qui commence par un audit, pas par des promesses",
+    promise:
+      "Avant tout plan de contenu, on regarde ce qui bloque techniquement : structure, collections, balises, images. Le reste se construit sur cette base.",
+    method: [
+      "Audit technique complet : structure, collections, balises, images",
+      "Sélection de mots-clés pertinents pour votre catalogue",
+      "Plan d'actions concret, pas un rapport de 40 pages illisible",
+      "Fiches produit optimisées (mots-clés, H1, description, méta, FAQ)",
+      "Suivi de position sur les mots-clés choisis",
+    ],
+    packs: [
+      {
+        name: "Audit SEO Shopify",
+        price: 390,
+        priceUnit: "€ HT",
+        audience: "Paiement unique",
+        includes: [
+          "Audit technique, collections, balises, images",
+          "10 mots-clés analysés",
+          "Plan de 10 actions",
+        ],
+      },
+      {
+        name: "Pack 10 fiches produit",
+        price: 590,
+        priceUnit: "€ HT",
+        audience: "Paiement unique",
+        includes: ["Mots-clés, H1, description, méta, FAQ pour 10 fiches produit"],
+      },
+      {
+        name: "SEO Mensuel",
+        price: 590,
+        priceUnit: "€ HT / mois, 3 mois minimum",
+        audience: "Suivi mensuel",
+        highlight: true,
+        includes: [
+          "10 fiches ou collections optimisées par mois",
+          "1 article par mois",
+          "Suivi de 20 mots-clés",
+          "Rapport",
+        ],
+      },
+    ],
+    setup: null,
+    options: [],
+    cta: "Je lance mon audit SEO",
+  },
+] as const;
+
 export const comparisonTable = [
   { name: "Cortiq", pricePerVideo: "178 à 220 €", delay: "5 jours", isUs: true },
   { name: "Agence Short", pricePerVideo: "≈ 500 €", delay: "3 à 4 semaines", isUs: false },
@@ -345,13 +667,36 @@ export const caseStudyDisclaimer =
 
 export const icps = [
   {
+    id: "startups-preseed",
+    label: "Startups pre-seed",
+    h1: "De l'acquisition et de la preuve de traction sans équipe growth",
+    painPoint:
+      "Vous devez montrer de la traction avant le tour suivant, avec un budget serré et sans équipe growth en interne.",
+    pitch:
+      "On met en place l'acquisition payante et la présence organique minimale pour générer des signaux de traction mesurables, sans vous faire exploser le budget média.",
+    subSegments: [
+      "SaaS B2B en pré-lancement",
+      "Apps mobiles en phase de test de marché",
+      "Marketplaces et places de marché naissantes",
+      "Produits digitaux avec une première landing page",
+    ],
+    whyUs: [
+      "Une fondatrice qui a piloté la croissance de 7 startups avant de lancer Cortiq : elle connaît les contraintes de budget et de délai d'un stade pre-seed.",
+      "On priorise ce qui donne des signaux rapidement (Meta Ads Lancement, Instagram Contenu) plutôt que des plans à 6 mois.",
+      "Pas d'engagement long : vous ajustez ou arrêtez un mois sur l'autre selon ce que vos chiffres montrent.",
+    ],
+    recommendedServices: ["meta-ads", "instagram"],
+    recommendedNote:
+      "Pour viser des signaux de traction rapides avec un budget limité : Meta Ads Lancement pour l'acquisition, Instagram Contenu pour la présence organique.",
+  },
+  {
     id: "app-mobile-b2c",
     label: "App mobile B2C",
-    h1: "Le test créatif pour les apps mobiles B2C",
+    h1: "L'acquisition et la rétention pour les apps mobiles B2C",
     painPoint:
-      "Vous dépensez sur l'acquisition Meta ou TikTok sans savoir à l'avance quel hook va retenir vos utilisateurs avant l'installation.",
+      "Vous dépensez sur l'acquisition Meta sans savoir à l'avance quel angle créatif va baisser votre coût par installation.",
     pitch:
-      "On teste 5 angles différents (douleur, preuve sociale, démonstration) en vidéo avant que vous ne poussiez du budget derrière un seul.",
+      "On pilote vos campagnes Meta Ads avec plusieurs angles testés en parallèle, et on structure votre Instagram pour la rétention organique.",
     subSegments: [
       "Apps de rencontre et social",
       "Apps musique, streaming et créativité",
@@ -359,19 +704,22 @@ export const icps = [
       "Apps utilitaires et productivité",
     ],
     whyUs: [
-      "Une growth marketer qui a déjà piloté l'acquisition d'apps B2C a conçu la méthode : pas un prestataire vidéo générique.",
+      "Une growth marketer qui a déjà piloté l'acquisition d'apps B2C a conçu la méthode : pas un prestataire générique.",
       "Testé en conditions réelles : CPA divisé par 3 et CPI de 2,50 € à 0,80 € sur une app musicale (HAT Music), +10 000 utilisateurs en 3 mois sur une app de rencontre (Keez).",
-      "5 angles testés pour le prix d'une seule vidéo d'agence, pour trouver le hook qui baisse votre CPI avant de scaler le budget.",
+      "Plusieurs angles testés en continu, pour trouver ce qui baisse votre CPI avant de scaler le budget.",
     ],
+    recommendedServices: ["meta-ads", "instagram", "crm-email"],
+    recommendedNote:
+      "Meta Ads pour l'acquisition par angle testé, Instagram pour la présence organique, CRM/Email si votre app a un onboarding ou une landing page qui capte des emails.",
   },
   {
     id: "ecommerce",
     label: "E-commerce",
-    h1: "Le test créatif pour l'e-commerce",
+    h1: "L'acquisition, la fidélisation et le SEO pour l'e-commerce Shopify",
     painPoint:
-      "Vous payez 400 à 500 € une vidéo UGC par créateur, sans garantie qu'elle batte votre créa actuelle.",
+      "Vous gérez Meta Ads, Google Shopping, vos emails et votre SEO séparément, sans vue d'ensemble ni budget pour une équipe dédiée à chaque canal.",
     pitch:
-      "5 angles produit testés pour le prix de deux vidéos d'agence, avec une garantie si aucune ne fait mieux que votre publicité actuelle.",
+      "On couvre les 4 canaux qui comptent pour un e-commerce autour de 15 000 € de chiffre d'affaires par mois : Meta Ads, Google Shopping, CRM/Email et SEO, avec un dashboard commun.",
     subSegments: [
       "Beauté et cosmétique",
       "Maison et décoration",
@@ -380,9 +728,12 @@ export const icps = [
     ],
     whyUs: [
       "Expérience concrète en e-commerce : optimisation des pages produits et catégories et stratégie d'A/B testing pour Yves Saint Laurent (L'Oréal).",
-      "Le bon angle produit change selon le secteur (prix pour la maison, preuve sociale pour la beauté, démonstration pour la mode) : nos 5 angles sont pensés pour votre sous-secteur, pas génériques.",
-      "Comparatif prix public dès la page Offres : vous savez ce que vous payez avant de commander.",
+      "Un flux produit propre avant de pousser du budget Google Shopping : beaucoup de comptes sous-performent à cause de ce détail.",
+      "Prix publics dès la page Tarifs : vous savez ce que vous payez avant de commander.",
     ],
+    recommendedServices: ["meta-ads", "google-ads", "crm-email", "seo"],
+    recommendedNote:
+      "La combinaison la plus demandée à ce stade : Meta Ads Croissance + Google Shopping (offre combo à 1 690 € HT/mois), CRM/Email Essentiel pour les flows automatiques, et un audit SEO Shopify pour démarrer.",
   },
 ] as const;
 

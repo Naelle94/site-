@@ -4,7 +4,7 @@ export function ProcessStepCard({
   step: { index: string; title: string; summary: string };
 }) {
   return (
-    <div className="border border-line bg-bg p-8 md:p-9">
+    <div className="rounded-2xl border border-line bg-bg p-8 md:p-9">
       <span className="font-mono text-xs text-orange-500">{step.index}</span>
       <h3 className="mt-4 text-xl font-medium tracking-tight text-fg">
         {step.title}

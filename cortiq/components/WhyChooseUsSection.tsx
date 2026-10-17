@@ -22,7 +22,7 @@ export function WhyChooseUsSection() {
 
       <div className="mx-auto mt-16 grid max-w-4xl gap-6 sm:grid-cols-2">
         {whyChooseUs.map((item) => (
-          <div key={item.title} className="border border-line bg-bg p-6">
+          <div key={item.title} className="rounded-2xl border border-line bg-bg p-6">
             <h3 className="text-[15px] font-medium text-fg">{item.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted">
               {item.description}

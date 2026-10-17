@@ -3,7 +3,7 @@ import { ExampleVideo } from "./ExampleVideo";
 
 export function BlindTestTeaser() {
   return (
-    <div className="grid items-center gap-10 border border-line bg-surface p-8 md:grid-cols-[auto_1fr] md:gap-14 md:p-12">
+    <div className="grid items-center gap-10 rounded-2xl border border-line bg-surface p-8 md:grid-cols-[auto_1fr] md:gap-14 md:p-12">
       <div className="mx-auto w-full max-w-[160px] md:mx-0">
         <ExampleVideo caption="Laquelle est l'IA ?" />
       </div>

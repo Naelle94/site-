@@ -9,28 +9,29 @@ const config: Config = {
     },
     extend: {
       colors: {
-        void: "#111111",
+        void: "#360802",
         bg: "#FFFFFF",
-        surface: "#FAFAF8",
-        surface2: "#F3F2EF",
-        line: "#E5E5E5",
-        fg: "#111111",
-        muted: "#6B6B6B",
+        surface: "#FDEDEA",
+        surface2: "#E7DCDB",
+        line: "#E7DCDB",
+        fg: "#360802",
+        muted: "#8A6F6B",
         orange: {
-          50: "#FFF4EE",
-          100: "#FFE8DC",
-          200: "#FFC6A3",
-          300: "#FF9E66",
-          400: "#FF7A38",
-          500: "#FF5A1F",
-          600: "#EA4507",
-          700: "#C13703",
-          800: "#8F2A05",
-          900: "#5F1D06",
+          50: "#FFF1EE",
+          100: "#FDEDEA",
+          200: "#FBCFC5",
+          300: "#FAA796",
+          400: "#F87D5F",
+          500: "#F73B20",
+          600: "#E22E15",
+          700: "#B82210",
+          800: "#8A1A0C",
+          900: "#5F1207",
         },
       },
       fontFamily: {
         sans: [
+          "Manrope",
           "Inter",
           "ui-sans-serif",
           "system-ui",
@@ -50,6 +51,10 @@ const config: Config = {
           "monospace",
         ],
       },
+      boxShadow: {
+        card: "0 -4px 16px 0 rgba(0,0,0,0.05)",
+        glass: "0 8px 24px 0 rgba(247,59,32,0.1), 0 2px 8px 0 rgba(247,59,32,0.05)",
+      },
       letterSpacing: {
         tightest: "-0.045em",
         tighter: "-0.03em",
@@ -58,8 +63,8 @@ const config: Config = {
         content: "1180px",
       },
       backgroundImage: {
-        grid: "linear-gradient(to right, rgba(17,17,17,0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(17,17,17,0.045) 1px, transparent 1px)",
-        glow: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255,90,31,0.10), transparent)",
+        grid: "linear-gradient(to right, rgba(54,8,2,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(54,8,2,0.05) 1px, transparent 1px)",
+        glow: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(247,59,32,0.10), transparent)",
       },
       keyframes: {
         marquee: {

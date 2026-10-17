@@ -35,7 +35,7 @@ export default function ExemplesPage() {
             <div className="mx-auto w-full max-w-[200px] md:mx-0">
               <ExampleVideo caption="Format illustratif, pas une fiche d'expérience réelle" />
             </div>
-            <div className="mx-auto max-w-xl border border-line bg-surface p-8 text-center md:mx-0 md:text-left">
+            <div className="mx-auto max-w-xl rounded-2xl border border-line bg-surface p-8 text-center md:mx-0 md:text-left">
               <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-orange-500">
                 {experiencesNote.title}
               </span>
